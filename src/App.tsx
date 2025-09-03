@@ -18,15 +18,29 @@ import visa from "./assets/visa.svg";
 import master from "./assets/master.png";
 import amex from "./assets/amex.svg";
 import discover from "./assets/discover.png";
+import selo from "./assets/ChatGPT Image 3 de set. de 2025, 20_19_35.png"
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [videoTime, setVideoTime] = useState(0);
-
+  const [showMore, setShowMore] = useState(false);
   // Configuração: tempo em segundos para desbloquear (5 minutos = 300 segundos)
   const UNLOCK_TIME = 10; // Reduzido para 10 segundos para demonstração - altere para 300 para 5 minutos
+  const fullText = `SlimVita possède une garantie solide de 180 jours. En fait, je veux faire un défi de 180 jours avec vous… Oui, si en 180 jours vous essayez cette formule SlimVita… … et si, par hasard, vous ne voyez PAS votre poids chuter ni vos mesures diminuer après avoir utilisé notre formule… Ou si personne ne vous complimente en disant combien vous avez maigri pendant cette période.
+  Nous vous rembourserons chaque centime de votre investissement. Il suffit d’envoyer un e-mail ou un message à notre support et nous procéderons immédiatement au remboursement !
+Nous offrons cette garantie parce que nous savons que… … même avec des centaines de témoignages positifs sur notre formule, certaines personnes peuvent encore se sentir sceptiques ou hésitantes.
+Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont réussi à perdre des dizaines de kilos avec notre formule… Et bien que SlimVita soit le seul complément 100 % soutenu par la science… Avec la seule formule qui agit réellement sur la cause de l’excès de poids…
+  
+La Big Pharma dépense des milliards d’euros chaque année… En pots-de-vin pour certains médecins corrompus et en publicités à la télévision pour cacher ces informations au public.
+C’est pourquoi mon intention ici était de vous enlever le bandeau des yeux… De vous montrer la vérité derrière tous ces régimes et méthodes bidons de perte de poids… Et de révéler ce qui fait vraiment maigrir une personne.
+Maintenant, vous savez déjà ce qui freine votre perte de poids. Vous savez ce qu’il faut faire pour résoudre ce problème. Et vous avez votre décision appuyée par une garantie de 180 jours qui enlève tout risque pour vous.
+Vous êtes à une seule décision de changer votre vie pour toujours. Alors, s’il vous plaît, cliquez ci-dessous pour garantir votre pack de 6 mois ou le montant qui vous convient le mieux.`;
 
+  const shortText = `SlimVita possède une garantie solide de 180 jours. En fait, je veux faire un défi de 180 jours avec vous… Oui, si en 180 jours vous essayez cette formule SlimVita… … et si, par hasard, vous ne voyez PAS votre poids chuter ni vos mesures diminuer après avoir utilisé notre formule… Ou si personne ne vous complimente en disant combien vous avez maigri pendant cette période.
+  Nous vous rembourserons chaque centime de votre investissement. Il suffit d’envoyer un e-mail ou un message à notre support et nous procéderons immédiatement au remboursement !
+Nous offrons cette garantie parce que nous savons que… … même avec des centaines de témoignages positifs sur notre formule, certaines personnes peuvent encore se sentir sceptiques ou hésitantes.
+Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont réussi à perdre des dizaines de kilos avec notre formule… Et bien que SlimVita soit le seul complément 100 % soutenu par la science… Avec la seule formule qui agit réellement sur la cause de l’excès de poids…`;
   useEffect(() => {
     // Simular progresso do vídeo
     const videoTimer = setInterval(() => {
@@ -99,7 +113,6 @@ function App() {
                 className="rounded-xl"
               ></iframe>
             </div>
-
             {!isUnlocked && (
               <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
                 <p className="text-yellow-800 text-sm">
@@ -108,6 +121,59 @@ function App() {
                 </p>
               </div>
             )}
+            {/* Texto Révélé acima da div URGENT */}
+            <p className="text-center text-gray-700 text-base md:text-lg font-medium mb-6 max-w-3xl mx-auto">
+              <span className="font-bold text-green-700">Révélé :</span> le
+              secret
+              <span className="italic">
+                {" "}
+                presque inconnu des célébrités américaines
+              </span>
+              pour avoir un corps{" "}
+              <span className="font-semibold text-green-800">
+                jeune, sexy et enviable
+              </span>{" "}
+              après 40 ans.
+            </p>
+
+            <div className="bg-white border border-green-200 rounded-2xl shadow-md p-6 md:p-8 mb-8 text-center max-w-4xl mx-auto">
+              {/* Badge URGENT (com animação pulse) */}
+              <div className="inline-block bg-green-600 text-white text-xs md:text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase animate-pulse">
+                URGENT
+              </div>
+
+              {/* Headline */}
+              <h2 className="text-green-800 text-2xl md:text-3xl font-extrabold leading-snug mb-4">
+                Deux actrices sont enquêtées pour avoir perdu{" "}
+                <span className="text-green-600 underline">
+                  36 kg en 3 semaines
+                </span>
+              </h2>
+
+              {/* Subtítulo */}
+              <p className="text-gray-800 text-lg md:text-xl font-semibold mb-3">
+                Pourquoi les grandes industries pharmaceutiques{" "}
+                <span className="underline text-green-700">NE veulent PAS</span>{" "}
+                que vous découvriez cela ?!
+              </p>
+
+              {/* Corpo */}
+              <p className="text-gray-600 text-base md:text-lg mb-6">
+                Le secret venu directement de la{" "}
+                <strong className="text-green-700">mer de l’Himalaya</strong>,
+                qui rend les célébrités américaines
+                <em> minces, sexy et enviables</em> après 40 ans, a été révélé.
+              </p>
+
+              {/* Link para VSL */}
+              <a
+                href="#"
+                className="inline-flex items-center justify-center text-green-700 font-bold hover:text-green-900 transition underline text-lg"
+              >
+                ▶ Regardez cette présentation ci-dessous, avant que la Big
+                Pharma ne la retire.
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -133,72 +199,6 @@ function App() {
       {/* Unlocked Content */}
       {isUnlocked && (
         <>
-          {/* Scientific References Section */}
-          <section className="py-16 bg-gradient-to-b from-white to-green-50">
-            <div className="container mx-auto px-4">
-              <div className="text-center max-w-4xl mx-auto mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
-                  Riferimenti Scientifici
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Studi scientifici dimostrano che gli ingredienti di Nutrivex
-                  possiedono proprietà uniche per accelerare il metabolismo,
-                  ridurre il grasso corporeo e migliorare la salute generale.
-                </p>
-                <p className="text-base text-gray-600 mt-4">
-                  Vedi qui sotto alcune pubblicazioni riconosciute a livello
-                  mondiale:
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {[
-                  "Journal of Natural Medicine",
-                  "International Journal of Obesity",
-                  "Nutrition & Metabolism Research",
-                ].map((journal, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500"
-                  >
-                    <div className="flex items-center mb-3">
-                      <Award className="w-6 h-6 text-green-600 mr-2" />
-                      <h3 className="font-semibold text-green-900">
-                        {journal}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-sm">
-                      Studi dimostrano l'efficacia degli ingredienti naturali
-                      nella perdita di peso sana.
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Promotional CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-green-600 to-green-800">
-            <div className="container mx-auto px-4 text-center">
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Vuoi trasformare il tuo corpo in modo naturale e veloce?
-                </h2>
-                <p className="text-xl text-green-100 mb-8">
-                  Clicca sul pulsante qui sotto per assicurarti il tuo Nutrivex
-                  prima che le ultime unità si esauriscano.
-                </p>
-                <button
-                  onClick={scrollToOffers}
-                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
-                >
-                  SÌ! Voglio il mio Nutrivex ora!
-                </button>
-              </div>
-            </div>
-          </section>
-
-          {/* Offers Section */}
           <section
             id="offers"
             className="py-12 bg-gradient-to-b from-green-50 to-white"
@@ -433,6 +433,693 @@ function App() {
             </div>
           </section>
 
+          {/* Seção de Depoimentos */}
+          <section className="bg-white py-12 px-4 md:px-8">
+            {/* Título */}
+            <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+              Voyez ce que{" "}
+              <span className="text-green-700">
+                plus de 1500 femmes françaises
+              </span>
+              , qui ont déjà transformé leur vie, disent sur{" "}
+              <span className="text-green-700">SlimVita</span> :
+            </h2>
+
+            {/* Grid de Depoimentos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+              {[
+                {
+                  name: "Sophie, 45 ans",
+                  text: "Grâce à SlimVita, j'ai retrouvé mon énergie et mon corps de rêve après 40 ans!",
+                },
+                {
+                  name: "Claire, 50 ans",
+                  text: "Je me sens plus confiante que jamais. Résultats incroyables!",
+                },
+                {
+                  name: "Amélie, 42 ans",
+                  text: "C'est le meilleur investissement que j'ai fait pour ma santé.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-100 rounded-xl shadow-md overflow-hidden"
+                >
+                  <img
+                    src="https://www.tribunapr.com.br/wp-content/uploads/sites/1/2019/05/remedio-pixabay.jpg"
+                    alt={`Depoimento ${i + 1}`}
+                    className="w-full h-60 object-cover"
+                  />
+                  <div className="p-4">
+                    <p className="text-gray-700 text-sm">"{item.text}"</p>
+                    <span className="block text-green-700 text-sm font-semibold mt-2">
+                      — {item.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Seção Antes e Depois */}
+            <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+              Voyez <span className="text-green-700">COMMENT</span> le corps de
+              ces femmes a changé :
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="bg-gray-100 rounded-xl shadow-md overflow-hidden text-center"
+                >
+                  <img
+                    src="https://img.freepik.com/fotos-premium/imagens-antes-e-depois-que-retratam-a-transformacao-de-una-jovem-adulta_1163068-195.jpg"
+                    alt={`Avant et Après ${i}`}
+                    className="w-full h-60 object-cover"
+                  />
+                  <p className="text-gray-700 font-semibold p-2">
+                    Avant ➡ Après
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Seção Ingredientes */}
+          <section className="bg-white py-12 px-4 md:px-8">
+            {/* Título */}
+            <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
+              Une formule{" "}
+              <span className="text-green-700">100 % naturelle</span>, produite
+              avec :
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+              {[
+                {
+                  title: "Bérbérine",
+                  desc: "Un fruit exotique de l’Amazonie, riche en un composant actif appelé bérbérine.",
+                  extra:
+                    "La bérbérine est un antioxydant extrêmement puissant, capable de réduire l’inflammation cellulaire jusqu’à 86 %.",
+                  img: "https://img.freepik.com/photos-premium/baies-rouges-naturelles-exotiques-isolees-fond-blanc_118047-9727.jpg",
+                },
+                {
+                  title: "Graine de guaraná",
+                  desc: "Le guaraná est l’un des fruits les plus emblématiques du Brésil.",
+                  extra:
+                    "Des études confirment que c’est l’un des fruits les plus efficaces pour brûler la graisse naturellement.",
+                  img: "https://img.freepik.com/fotos-premium/fruta-guarana-fundo-branco_35641-1021.jpg",
+                },
+                {
+                  title: "Quercétine",
+                  desc: "Un flavonoïde puissant trouvé dans certains fruits.",
+                  extra:
+                    "Limite la formation de nouvelles cellules graisseuses, régule le glucose et agit sur la satiété.",
+                  img: "https://img.freepik.com/fotos-gratis/frutas-frescas-em-fundo-branco_144627-14565.jpg",
+                },
+                {
+                  title: "Sel rose",
+                  desc: "Un véritable trésor minéral contenant plus de 80 minéraux bioactifs.",
+                  extra:
+                    "Régule l’insuline, améliore l’absorption du glucose et stimule la production naturelle de GLP-1.",
+                  img: "https://img.freepik.com/fotos-gratis/sal-rosa-himalaya-fundo-branco_123827-23865.jpg",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-green-700">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm mt-2">{item.desc}</p>
+                    <p className="text-gray-600 text-xs mt-1">{item.extra}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bônus */}
+            <div className="py-20 bg-gradient-to-b from-green-50 to-white">
+              <div className="container mx-auto px-4">
+                {/* Título */}
+                <div className="text-center  mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-6">
+                    👉 En achetant le kit avec 6 flacons{" "}
+                    <span className="text-yellow-500">AUJOURD’HUI</span>…
+                  </h2>
+                  <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Vous aurez encore droit à recevoir{" "}
+                    <span className="font-bold text-green-700">
+                      7 bonus exclusifs
+                    </span>{" "}
+                    :
+                  </p>
+                </div>
+
+                <div className="max-w-4xl mx-auto relative">
+                  {/* Linha verde - ajustada para parar no último bonus */}
+                  <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-green-700 hidden md:block pointer-events-none"></div>
+
+                  <div className="space-y-8 relative z-10">
+                    {[
+                      "La Méthode Taille de Rêve",
+                      "La Recette Secrète du Cocktail Indien",
+                      "Le Secret Anti-Effet Yoyo",
+                      "20 Façons d’Accélérer Votre Métabolisme à la Maison",
+                      "Le Protocole Zéro Rétention",
+                      "9 Recettes pour Contrôler le Diabète et la Glycémie",
+                      "Un Cadeau Final et Très Spécial → Avec le droit de participer au tirage au sort de 1.000 € d’achats chez H&M",
+                    ].map((bonus, index, arr) => (
+                      <div key={index} className="relative">
+                        {/* Ponto da timeline */}
+                        <div className="absolute left-6 top-8 w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow-lg hidden md:block z-10"></div>
+
+                        {/* Card */}
+                        <div
+                          className={`bg-white rounded-2xl shadow-xl p-8 ml-0 md:ml-16 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 ${
+                            index === arr.length - 1 ? "mb-0" : ""
+                          }`}
+                        >
+                          <div className="flex flex-col gap-4">
+                            <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full font-bold text-lg w-max">
+                              BONUS N°{index + 1}
+                            </span>
+                            <h3 className="text-xl font-semibold text-gray-800">
+                              {bonus}
+                            </h3>
+                            <p className="text-2xl font-bold text-yellow-500">
+                              GRATUIT
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Valor total */}
+                <div className="mt-6 text-center">
+                  <div className="max-w-4xl mx-auto mt-6">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl px-6 py-2 md:py-4 shadow-md text-center">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                        VALEUR TOTALE DES BONUS: +300 €
+                      </h3>
+                      <p className="text-sm md:text-base text-white">
+                        AUJOURD’HUI TOUT{" "}
+                        <span className="font-bold text-base md:text-lg">
+                          GRATUIT
+                        </span>{" "}
+                        avec votre commande !
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 90-Day Guarantee Section */}
+          <section className="mb-3 py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-5xl flex flex-col items-center">
+              {/* Selo no topo */}
+              <div className="mb-8">
+                <img
+                  src={selo}
+                  alt="Sceau Garantie 180 Jours"
+                  className="w-40 h-40 object-contain mx-auto"
+                />
+              </div>
+
+              <div className="w-full">
+                <h3 className="text-2xl md:text-3xl font-bold text-green-900 mb-4 text-center md:text-left">
+                  PROTECTION ABSOLUE DE 180 JOURS – NOUS ALLONS GARANTIR VOS
+                  RÉSULTATS !
+                </h3>
+
+                {/* Texto com a seta no final */}
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {showMore ? fullText : shortText}
+                  <button
+                    aria-label={showMore ? "Réduire le texte" : "Afficher plus"}
+                    onClick={() => setShowMore(!showMore)}
+                    className="ml-2 align-middle text-green-900 hover:text-green-700"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      padding: 0,
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      viewBox="0 0 24 24"
+                      style={{
+                        display: "inline-block",
+                        verticalAlign: "middle",
+                        transform: showMore ? "rotate(180deg)" : "rotate(0deg)",
+                        transition: "transform 0.3s ease",
+                      }}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                </p>
+              </div>
+            </div>
+          </section>
+
+      {/* Offers Section */}
+          <section
+            id="offers"
+            className="py-12 bg-gradient-to-b from-green-50 to-white"
+          >
+            <div className="container mx-auto px-4">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-2">
+                  Scegli il tuo piano Nutrivex
+                </h2>
+                <p className="text-base text-gray-600">
+                  Trasforma la tua vita con i nostri piani speciali
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {/* PACKAGE 1 - BASIC */}
+                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-300 transition-all duration-300">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-slate-700 text-white px-4 py-1 rounded-full text-xs font-bold">
+                      BASIC
+                    </span>
+                  </div>
+                  <div className="text-center mb-3 mt-1">
+                    <h3 className="text-2xl font-extrabold text-slate-900">
+                      1 BOTTLE
+                    </h3>
+                    <div className="inline-block text-sm font-semibold text-gray-600">
+                      60 DAY SUPPLY
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-3">
+                    <img
+                      src={oneBottle}
+                      alt="Nutrivex 1 Bottle"
+                      className="w-24 h-32 object-cover"
+                    />
+                  </div>
+                  <div className="text-center mb-2">
+                    <p className="text-4xl font-extrabold text-slate-900">
+                      $79
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1">
+                      PER BOTTLE
+                    </p>
+                  </div>
+                  <div className="text-center my-3">
+                    <div className="border-t-4 border-dashed border-slate-300 rounded-lg py-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        YOU SAVE $140!
+                      </p>
+                    </div>
+                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        60 DAYS GUARANTEE
+                      </p>
+                    </div>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
+                    ADD TO CART
+                  </button>
+                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
+                    {[visa, master, discover, amex].map((card, i) => (
+                      <img
+                        key={i}
+                        src={card}
+                        alt="Payment"
+                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
+                      />
+                    ))}
+                  </div>
+                  <div className="text-center mt-3">
+                    <p className="text-sm text-black">
+                      Total:{" "}
+                      <span className="line-through text-red-700">$298</span>{" "}
+                      <span className="font-bold text-slate-900">$158</span>
+                    </p>
+                    <p className="text-sm text-gray-700 mt-1">+ SHIPPING</p>
+                  </div>
+                </div>
+
+                {/* PACKAGE 2 - BEST VALUE */}
+                <div className="relative bg-white rounded-2xl shadow-2xl p-6 border-4 border-green-600 transform scale-105">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-extrabold">
+                      BEST VALUE!
+                    </span>
+                  </div>
+                  <div className="text-center mb-3 mt-1">
+                    <h3 className="text-2xl font-extrabold text-slate-900">
+                      BUY 3 GET + 3 FREE
+                    </h3>
+                    <div className="inline-block text-base font-semibold text-green-700">
+                      180 DAY SUPPLY
+                    </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <img
+                      src={sixBottles}
+                      alt="Nutrivex 6 Bottles"
+                      className="w-48 h-auto object-cover"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-extrabold text-slate-900 -mt-9">
+                      $49
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1">
+                      PER BOTTLE
+                    </p>
+                  </div>
+
+                  <div className="text-center my-3">
+                    <div className="border-t-4 border-dashed border-green-600 py-1">
+                      <p className="text-green-700 font-bold text-base">
+                        YOU SAVE $600!
+                      </p>
+                    </div>
+                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        BIGGEST DISCOUNT
+                      </p>
+                    </div>
+                    <div className="border-b-4 border-dashed border-slate-300 py-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        + 2 FREE BONUSES
+                      </p>
+                    </div>
+                    <div className="border-b-4 border-dashed border-slate-300 py-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        60 DAYS GUARANTEE
+                      </p>
+                    </div>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-xl">
+                    ADD TO CART
+                  </button>
+                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
+                    {[visa, master, discover, amex].map((card, i) => (
+                      <img
+                        key={i}
+                        src={card}
+                        alt="Payment"
+                        className="h-8 w-14 object-contain border border-slate-300 rounded-md"
+                      />
+                    ))}
+                  </div>
+                  <div className="text-center mt-3">
+                    <p className="text-sm text-black">
+                      Total:{" "}
+                      <span className="line-through text-red-700">$894</span>{" "}
+                      <span className="font-bold text-slate-900">$294</span>
+                    </p>
+                    <p className="text-sm text-green-700 mt-1 font-semibold">
+                      + FREE SHIPPING
+                    </p>
+                  </div>
+                </div>
+
+                {/* PACKAGE 3 - MOST POPULAR */}
+                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-500 transition-all duration-300">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+                      MOST POPULAR
+                    </span>
+                  </div>
+                  <div className="text-center mb-3 mt-1">
+                    <h3 className="text-2xl font-extrabold text-slate-900">
+                      BUY 2 GET + 1 FREE
+                    </h3>
+                    <div className="inline-block text-sm font-semibold text-green-600">
+                      90 DAY SUPPLY
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-3">
+                    <img
+                      src={threeBottles}
+                      alt="Nutrivex 3 Bottles"
+                      className="w-32 h-auto object-cover"
+                    />
+                  </div>
+                  <div className="text-center mb-2">
+                    <p className="text-4xl font-extrabold text-slate-900">
+                      $69
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1">
+                      PER BOTTLE
+                    </p>
+                  </div>
+                  <div className="text-center my-3">
+                    <div className="border-t-4 border-dashed border-green-500 py-1">
+                      <p className="text-green-600 font-bold text-base">
+                        YOU SAVE $300!
+                      </p>
+                    </div>
+                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        + 1 FREE BONUS
+                      </p>
+                    </div>
+                    <div className="border-b-4 border-dashed border-slate-300 py-1">
+                      <p className="text-slate-800 font-bold text-base">
+                        60 DAYS GUARANTEE
+                      </p>
+                    </div>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
+                    ADD TO CART
+                  </button>
+                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
+                    {[visa, master, discover, amex].map((card, i) => (
+                      <img
+                        key={i}
+                        src={card}
+                        alt="Payment"
+                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
+                      />
+                    ))}
+                  </div>
+                  <div className="text-center mt-3">
+                    <p className="text-sm text-black">
+                      Total:{" "}
+                      <span className="line-through text-red-700">$447</span>{" "}
+                      <span className="font-bold text-slate-900">$207</span>
+                    </p>
+                    <p className="text-sm text-green-600 mt-1">
+                      + FREE SHIPPING
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+{/* Grid de Depoimentos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+              {[
+                {
+                  name: "Sophie, 45 ans",
+                  text: "Grâce à SlimVita, j'ai retrouvé mon énergie et mon corps de rêve après 40 ans!",
+                },
+                {
+                  name: "Claire, 50 ans",
+                  text: "Je me sens plus confiante que jamais. Résultats incroyables!",
+                },
+                {
+                  name: "Amélie, 42 ans",
+                  text: "C'est le meilleur investissement que j'ai fait pour ma santé.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-100 rounded-xl shadow-md overflow-hidden"
+                >
+                  <img
+                    src="https://www.tribunapr.com.br/wp-content/uploads/sites/1/2019/05/remedio-pixabay.jpg"
+                    alt={`Depoimento ${i + 1}`}
+                    className="w-full h-60 object-cover"
+                  />
+                  <div className="p-4">
+                    <p className="text-gray-700 text-sm">"{item.text}"</p>
+                    <span className="block text-green-700 text-sm font-semibold mt-2">
+                      — {item.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+  {/* FAQ Section */}
+          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
+  <div className="container mx-auto px-4">
+    {/* Título */}
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+        Domande Frequenti
+      </h2>
+      <p className="text-lg text-gray-700">
+        Le risposte alle domande più comuni dei nostri clienti.
+      </p>
+    </div>
+
+    <div className="max-w-3xl mx-auto space-y-4">
+      {[
+        {
+          q: "1. Depuis que j’ai commencé à prendre SlimVita, je sens mon corps plus léger et j’ai plus d’énergie. Est-ce normal ?",
+          a: "Oui ! C’est exactement ce qu’il faut attendre. SlimVita est le premier complément naturel au monde cliniquement formulé pour activer « l’hormone de la minceur » et accélérer la combustion des graisses profondes. En éliminant l’excès de cellules graisseuses accumulées et en restaurant l’équilibre naturel du corps… Vous vous sentez plus légère, plus disposée et pleine d’énergie pour la vie quotidienne.",
+        },
+        {
+          q: "2. Je prends déjà d’autres compléments et SlimVita semble avoir renforcé leurs effets. Est-ce vraiment le cas ?",
+          a: "Oui ! Les ingrédients naturels de SlimVita fonctionnent en synergie avec d’autres compléments. Beaucoup d’utilisateurs rapportent une amélioration non seulement de la perte de poids, mais aussi de la digestion, de la peau, de l’humeur et même de la qualité du sommeil.",
+        },
+        {
+          q: "3. Quels sont les ingrédients de SlimVita et comment fonctionnent-ils ?",
+          a: "SlimVita combine des ingrédients 100 % naturels comme le sel rose, la quercétine, la graine de guaraná et l’extrait de tucumã. Cette formule stimule la production naturelle de GLP-1… La même substance présente dans des médicaments comme l’Ozempic. Mais de façon sûre, sans aiguilles et jusqu’à 9 fois plus efficace que ces stylos injectables.",
+        },
+        {
+          q: "4. Comment dois-je prendre SlimVita ? Existe-t-il une façon correcte de l’utiliser et y a-t-il des contre-indications ?",
+          a: "SlimVita est super pratique et facile à utiliser. Il suffit de déposer la dose indiquée directement dans la bouche, exactement comme vous avez sûrement déjà vu certaines célébrités le faire, et voilà. Votre corps commence immédiatement à absorber les actifs naturels qui stimulent la production de GLP-1. La posologie recommandée est de 10 gouttes par jour (conformément aux indications sur l’emballage), pouvant être prises à tout moment de la journée. L’essentiel est de maintenir l’utilisation quotidienne pour maximiser les résultats. Concernant la sécurité, SlimVita est un produit naturel, c’est-à-dire zéro risque pour votre santé.",
+        },
+        {
+          q: "5. Pourquoi personne ne m’a parlé plus tôt de quelque chose d’aussi révolutionnaire que SlimVita ?",
+          a: "Excellente question ! SlimVita est véritablement une révolution dans l’amaigrissement naturel. Mais l’industrie de la minceur gagne des milliards avec des régimes radicaux, des médicaments pleins d’effets secondaires et des promesses vides. Nous avons choisi de transformer des vies en silence, en aidant des milliers de personnes à maigrir de manière saine et définitive.",
+        },
+        {
+          q: "6. Mon mari n’arrête pas de me regarder et de me désirer, et certaines amies sont curieuses de mon petit secret… Est-ce normal ?",
+          a: "Oui, cela arrive souvent ! SlimVita agit de l’intérieur vers l’extérieur, aidant votre corps à éliminer l’excès de poids et à dégonfler naturellement. Le résultat ne se voit pas seulement sur la balance, mais aussi dans le miroir et dans votre énergie : Vous commencez à vous sentir plus légère, plus confiante et avec une estime de soi renouvelée. Ce changement est si visible que le regard des gens autour de vous change. Beaucoup de clientes rapportent exactement cela : leur mari remarque davantage, les complimente, les désire… Et les amies ne résistent pas à demander quel est le petit secret derrière une telle transformation.",
+        },
+        {
+          q: "7. J’ai passé ma commande et elle est arrivée en seulement trois jours. Est-ce normal ?",
+          a: "Oui ! Dès que votre commande est confirmée sur notre page 100 % sécurisée, elle est expédiée rapidement. Le délai moyen est de 3 à 5 jours ouvrés, mais beaucoup de clients reçoivent avant ce délai.",
+        },
+        {
+          q: "8. J’ai reçu un e-mail disant que SlimVita pourrait être indisponible. Est-ce vrai ?",
+          a: "Malheureusement, oui. La forte demande, ajoutée au processus d’importation de certains ingrédients, peut affecter notre stock. C’est pourquoi il est important de garantir votre pack dès aujourd’hui.",
+        },
+        {
+          q: "9. Je veux commencer maintenant ! Que dois-je faire ?",
+          a: "C’est simple : cliquez sur le bouton ci-dessous, choisissez le meilleur pack pour vous et finalisez votre commande. Votre SlimVita arrivera sous 5 jours ouvrés maximum. Avec notre garantie de 180 jours, vous n’avez rien à perdre et tout à gagner.",
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-xl shadow-md border border-green-200 overflow-hidden"
+        >
+          <details className="group">
+            <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50">
+              <span>{item.q}</span>
+              <svg
+                className="w-5 h-5 text-green-600 transform group-open:rotate-180 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </summary>
+            <div className="px-6 pb-4 text-gray-700 text-sm whitespace-pre-line">
+              {item.a}
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+          {/* Scientific References Section */}
+          <section className="py-16 bg-gradient-to-b from-white to-green-50">
+            <div className="container mx-auto px-4">
+              <div className="text-center max-w-4xl mx-auto mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+                  Riferimenti Scientifici
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Studi scientifici dimostrano che gli ingredienti di Nutrivex
+                  possiedono proprietà uniche per accelerare il metabolismo,
+                  ridurre il grasso corporeo e migliorare la salute generale.
+                </p>
+                <p className="text-base text-gray-600 mt-4">
+                  Vedi qui sotto alcune pubblicazioni riconosciute a livello
+                  mondiale:
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {[
+                  "Journal of Natural Medicine",
+                  "International Journal of Obesity",
+                  "Nutrition & Metabolism Research",
+                ].map((journal, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500"
+                  >
+                    <div className="flex items-center mb-3">
+                      <Award className="w-6 h-6 text-green-600 mr-2" />
+                      <h3 className="font-semibold text-green-900">
+                        {journal}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Studi dimostrano l'efficacia degli ingredienti naturali
+                      nella perdita di peso sana.
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Promotional CTA Section */}
+          <section className="py-16 bg-gradient-to-r from-green-600 to-green-800">
+            <div className="container mx-auto px-4 text-center">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Vuoi trasformare il tuo corpo in modo naturale e veloce?
+                </h2>
+                <p className="text-xl text-green-100 mb-8">
+                  Clicca sul pulsante qui sotto per assicurarti il tuo Nutrivex
+                  prima che le ultime unità si esauriscano.
+                </p>
+                <button
+                  onClick={scrollToOffers}
+                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                >
+                  SÌ! Voglio il mio Nutrivex ora!
+                </button>
+              </div>
+            </div>
+          </section>
+
           {/* Guarantee Section */}
           <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
             <div className="container mx-auto px-4 text-center">
@@ -451,144 +1138,6 @@ function App() {
                   Se non sei soddisfatto dei risultati, rimborsiamo il 100% del
                   tuo investimento. Senza domande, senza burocrazia.
                 </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Bonuses Section */}
-          <section className="py-20 bg-gradient-to-b from-green-50 to-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-6">
-                  Ordina ora e ricevi 6{" "}
-                  <span className="text-yellow-500">BONUS ESCLUSIVI</span>
-                </h2>
-                <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                  Oltre al Nutrivex, riceverai gratuitamente questi 6 bonus del
-                  valore di oltre €300
-                </p>
-              </div>
-
-              <div className="max-w-4xl mx-auto relative">
-                {/* Vertical connecting line */}
-                <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-green-700 hidden md:block"></div>
-
-                <div className="space-y-8">
-                  {[
-                    {
-                      title: "Detox Naturale",
-                      subtitle: "Guida completa per la pulizia dell'organismo",
-                      price: "€49,95",
-                      desc: "Scopri come eliminare le tossine accumulate nel tuo corpo con metodi 100% naturali e sicuri.",
-                      image:
-                        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                    {
-                      title: "MetaBurn",
-                      subtitle: "20 strategie per accelerare il metabolismo",
-                      price: "€54,95",
-                      desc: "Tecniche scientificamente provate per bruciare calorie anche a riposo e trasformare il tuo corpo.",
-                      image:
-                        "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                    {
-                      title: "Effetto Permanente",
-                      subtitle: "Come non riprendere mai più il peso perso",
-                      price: "€49,95",
-                      desc: "Il segreto giapponese per mantenere il peso ideale per tutta la vita senza effetto yo-yo.",
-                      image:
-                        "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                    {
-                      title: "Ricetta Dorada",
-                      subtitle: "Migliora la circolazione e riduci i gonfiori",
-                      price: "€39,95",
-                      desc: "Una ricetta antica che migliora la circolazione e ridefinisce le tue gambe in 21 giorni.",
-                      image:
-                        "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                    {
-                      title: "Zero Ritenzione",
-                      subtitle: "Elimina ritenzione idrica e gonfiore",
-                      price: "€44,95",
-                      desc: "Metodi naturali per eliminare la ritenzione idrica e ottenere un corpo più definito.",
-                      image:
-                        "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                    {
-                      title: "Guida Anti-Tossine",
-                      subtitle: "Sostanze che sabotano la tua salute",
-                      price: "€34,95",
-                      desc: "Scopri quali sostanze quotidiane bloccano la perdita di peso e come evitarle.",
-                      image:
-                        "https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&fit=crop",
-                    },
-                  ].map((bonus, index) => (
-                    <div key={index} className="relative">
-                      {/* Connection dot */}
-                      <div className="absolute left-6 top-8 w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow-lg hidden md:block z-10"></div>
-
-                      <div className="bg-white rounded-2xl shadow-xl p-8 ml-0 md:ml-16 border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300">
-                        <div className="flex flex-col md:flex-row items-start gap-6">
-                          <div className="flex-shrink-0">
-                            <img
-                              src={bonus.image}
-                              alt={bonus.title}
-                              className="w-32 h-40 object-cover rounded-lg shadow-md"
-                            />
-                          </div>
-
-                          <div className="flex-1">
-                            <div className="flex items-center mb-4">
-                              <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full font-bold text-lg mr-4">
-                                BONUS N°{index + 1}
-                              </span>
-                            </div>
-
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                              {index + 1} - {bonus.title}
-                            </h3>
-
-                            <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                              {bonus.subtitle}
-                            </h4>
-
-                            <div className="mb-4">
-                              <p className="text-gray-600 text-sm mb-2">
-                                PREZZO CONSIGLIATO:{" "}
-                                <span className="line-through">
-                                  {bonus.price}
-                                </span>{" "}
-                                OGGI:
-                              </p>
-                              <p className="text-2xl font-bold text-yellow-500">
-                                GRATUITO
-                              </p>
-                            </div>
-
-                            <p className="text-gray-600 leading-relaxed">
-                              {bonus.desc}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Total value highlight */}
-                <div className="mt-12 text-center">
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-8 shadow-2xl">
-                    <h3 className="text-3xl font-bold text-white mb-2">
-                      VALORE TOTALE DEI BONUS: €273,70
-                    </h3>
-                    <p className="text-xl text-white">
-                      OGGI TUTTO{" "}
-                      <span className="font-bold text-2xl">GRATUITO</span> con
-                      il tuo ordine!
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
@@ -747,85 +1296,86 @@ function App() {
             </div>
           </section>
 
-         {/* Section: Livraison Gratuite + Avantages (com caminhão) */}
-<section className="bg-gradient-to-r from-green-800 to-green-500 text-white py-16">
-  <div className="container mx-auto px-4 text-center">
 
-    {/* Caminhão */}
-    <div className="flex justify-center mb-6">
-      <svg
-        viewBox="0 0 64 64"
-        className="w-16 h-16 md:w-20 md:h-20 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        {/* Linhas de movimento */}
-        <line x1="6" y1="30" x2="14" y2="30" />
-        <line x1="2" y1="34" x2="12" y2="34" />
-        {/* Baú */}
-        <rect x="6" y="24" width="30" height="16" rx="2" />
-        {/* Cabine + carroceria */}
-        <path d="M36 24h10l6 8v8H36z" />
-        {/* Janela da cabine */}
-        <rect x="40" y="27" width="7" height="5" rx="1" />
-        {/* Chão da carroceria */}
-        <line x1="6" y1="40" x2="58" y2="40" />
-        {/* Rodas */}
-        <circle cx="18" cy="44" r="4" />
-        <circle cx="46" cy="44" r="4" />
-      </svg>
-    </div>
 
-    {/* Título */}
-    <h2 className="text-2xl md:text-3xl font-bold mb-2">
-      Chaque commande de{" "}
-      <span className="text-yellow-300">6 flacons</span> bénéficie également de la{" "}
-      <span className="text-yellow-300">livraison GRATUITE !</span>
-    </h2>
+          {/* Section: Livraison Gratuite + Avantages (com caminhão) */}
+          <section className="bg-gradient-to-r from-green-800 to-green-500 text-white py-16">
+            <div className="container mx-auto px-4 text-center">
+              {/* Caminhão */}
+              <div className="flex justify-center mb-6">
+                <svg
+                  viewBox="0 0 64 64"
+                  className="w-16 h-16 md:w-20 md:h-20 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  {/* Linhas de movimento */}
+                  <line x1="6" y1="30" x2="14" y2="30" />
+                  <line x1="2" y1="34" x2="12" y2="34" />
+                  {/* Baú */}
+                  <rect x="6" y="24" width="30" height="16" rx="2" />
+                  {/* Cabine + carroceria */}
+                  <path d="M36 24h10l6 8v8H36z" />
+                  {/* Janela da cabine */}
+                  <rect x="40" y="27" width="7" height="5" rx="1" />
+                  {/* Chão da carroceria */}
+                  <line x1="6" y1="40" x2="58" y2="40" />
+                  {/* Rodas */}
+                  <circle cx="18" cy="44" r="4" />
+                  <circle cx="46" cy="44" r="4" />
+                </svg>
+              </div>
 
-    {/* Subtítulo */}
-    <p className="text-sm md:text-base mb-8">
-      *96 % de nos clientes commandent 6 flacons (
-      <span className="italic">notre option recommandée</span>)
-    </p>
+              {/* Título */}
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Chaque commande de{" "}
+                <span className="text-yellow-300">6 flacons</span> bénéficie
+                également de la{" "}
+                <span className="text-yellow-300">livraison GRATUITE !</span>
+              </h2>
 
-    {/* Benefícios */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-      {[
-        "Formule Naturelle",
-        "Ingrédients d'Origine Végétale",
-        "Sans OGM",
-        "Gouttes Faciles À Prendre",
-        "Sans Stimulants",
-        "Ne Crée Pas De Dépendance",
-      ].map((item, index) => (
-        <div
-          key={index}
-          className="bg-white text-gray-900 rounded-xl shadow-md p-4 flex items-center justify-center font-semibold"
-        >
-          <svg
-            className="w-5 h-5 text-green-600 mr-2"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+              {/* Subtítulo */}
+              <p className="text-sm md:text-base mb-8">
+                *96 % de nos clientes commandent 6 flacons (
+                <span className="italic">notre option recommandée</span>)
+              </p>
 
+              {/* Benefícios */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {[
+                  "Formule Naturelle",
+                  "Ingrédients d'Origine Végétale",
+                  "Sans OGM",
+                  "Gouttes Faciles À Prendre",
+                  "Sans Stimulants",
+                  "Ne Crée Pas De Dépendance",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white text-gray-900 rounded-xl shadow-md p-4 flex items-center justify-center font-semibold"
+                  >
+                    <svg
+                      className="w-5 h-5 text-green-600 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
 
           {/* Section: Témoignages Réels */}
           <section className="py-16 bg-white">
@@ -993,237 +1543,6 @@ function App() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ Section */}
-          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center max-w-3xl mx-auto mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
-                  Domande Frequenti
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Le risposte alle domande più comuni dei nostri clienti.
-                </p>
-              </div>
-
-              <div className="max-w-3xl mx-auto space-y-4">
-                {[
-                  {
-                    q: "Quanto tempo impiega Nutrivex per fare effetto?",
-                    a: "La maggior parte delle persone nota i primi risultati già nelle prime 2 settimane.",
-                  },
-                  {
-                    q: "Nutrivex è sicuro?",
-                    a: "Sì, la formula è 100% naturale, priva di OGM e stimolanti.",
-                  },
-                  {
-                    q: "Quante bottiglie dovrei ordinare?",
-                    a: "Consigliamo il pacchetto di 3 o 6 bottiglie per risultati migliori e duraturi.",
-                  },
-                  {
-                    q: "Qual è il modo migliore per assumere Nutrivex?",
-                    a: "Assumi 2 capsule al giorno con un bicchiere d’acqua, preferibilmente dopo i pasti.",
-                  },
-                  {
-                    q: "È un pagamento unico?",
-                    a: "Sì, paghi una sola volta, senza abbonamenti nascosti.",
-                  },
-                  {
-                    q: "E se Nutrivex non funziona per me?",
-                    a: "Hai una garanzia soddisfatti o rimborsati di 60 giorni. Se non sei soddisfatto, riceverai il rimborso completo.",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-md border border-green-200 overflow-hidden"
-                  >
-                    <details className="group">
-                      <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50">
-                        <span>{item.q}</span>
-                        <svg
-                          className="w-5 h-5 text-green-600 transform group-open:rotate-180 transition-transform duration-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </summary>
-                      <div className="px-6 pb-4 text-gray-700 text-sm">
-                        {item.a}
-                      </div>
-                    </details>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 90-Day Guarantee Section */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                {/* Left: Big 90-Days Seal */}
-                <div className="flex justify-center">
-                  <svg
-                    viewBox="0 0 500 500"
-                    className="w-72 h-72"
-                    role="img"
-                    aria-label="Garanzia 90 Giorni"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="sealGradient"
-                        x1="0"
-                        y1="0"
-                        x2="1"
-                        y2="1"
-                      >
-                        <stop offset="0%" stopColor="#2563eb" />
-                        <stop offset="100%" stopColor="#1e40af" />
-                      </linearGradient>
-                    </defs>
-                    <circle
-                      cx="250"
-                      cy="250"
-                      r="220"
-                      fill="url(#sealGradient)"
-                    />
-                    <circle cx="250" cy="250" r="200" fill="white" />
-                    <circle
-                      cx="250"
-                      cy="250"
-                      r="180"
-                      fill="url(#sealGradient)"
-                    />
-                    <circle cx="250" cy="250" r="150" fill="white" />
-
-                    {/* Outer text */}
-                    <text
-                      x="250"
-                      y="120"
-                      textAnchor="middle"
-                      fontSize="28"
-                      fontWeight="700"
-                      fill="#1f2937"
-                    >
-                      MONEY BACK
-                    </text>
-                    <text
-                      x="250"
-                      y="385"
-                      textAnchor="middle"
-                      fontSize="28"
-                      fontWeight="700"
-                      fill="#1f2937"
-                    >
-                      GUARANTEE
-                    </text>
-
-                    {/* 90 DAYS */}
-                    <text
-                      x="250"
-                      y="235"
-                      textAnchor="middle"
-                      fontSize="36"
-                      fontWeight="700"
-                      fill="#1f2937"
-                    >
-                      90 DAYS
-                    </text>
-                    <rect
-                      x="140"
-                      y="245"
-                      width="220"
-                      height="44"
-                      fill="url(#sealGradient)"
-                      rx="8"
-                    />
-                    <text
-                      x="250"
-                      y="274"
-                      textAnchor="middle"
-                      fontSize="26"
-                      fontWeight="800"
-                      fill="white"
-                    >
-                      MONEY BACK
-                    </text>
-                  </svg>
-                </div>
-
-                {/* Right: Copy + mini badges */}
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-green-900">
-                    Soddisfazione 100% — Garanzia di Rimborso 90 Giorni
-                  </h3>
-                  <p className="mt-4 text-gray-700 leading-relaxed">
-                    Il tuo ordine è coperto dalla nostra garanzia di rimborso
-                    entro 90 giorni. Se non sei soddisfatto dei risultati,
-                    contattaci in qualsiasi momento entro 90 giorni e
-                    rimborseremo il 100% del tuo investimento—senza domande.
-                  </p>
-
-                  {/* Mini badges */}
-                  <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-                    {[
-                      {
-                        label: "GMP Quality",
-                        icon: (
-                          <path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.5L12 17l-5.6 2.7 1.1-6.5L3 8.9 9 8l3-6z" />
-                        ),
-                      },
-                      {
-                        label: "FDA Registered",
-                        icon: <path d="M4 6h16v12H4zM8 10h8M8 14h8" />,
-                      },
-                      {
-                        label: "Natural",
-                        icon: (
-                          <path d="M12 3c-4 4-6 8-6 11a6 6 0 0012 0c0-3-2-7-6-11zM8 14c2 0 4-1 4-3" />
-                        ),
-                      },
-                      {
-                        label: "Made in USA",
-                        icon: <path d="M4 7h16M4 11h16M4 15h16M4 19h16" />,
-                      },
-                      {
-                        label: "GMO Free",
-                        icon: <path d="M5 19L19 5M8 8a4 4 0 016 6" />,
-                      },
-                    ].map((b, i) => (
-                      <div
-                        key={i}
-                        className="flex flex-col items-center text-center"
-                      >
-                        <span className="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-gray-300">
-                          <svg
-                            viewBox="0 0 24 24"
-                            className="w-8 h-8"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            {b.icon}
-                          </svg>
-                        </span>
-                        <p className="mt-2 text-sm font-semibold text-gray-700">
-                          {b.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </section>
