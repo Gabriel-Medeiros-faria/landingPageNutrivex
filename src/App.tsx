@@ -18,7 +18,7 @@ import visa from "./assets/visa.svg";
 import master from "./assets/master.png";
 import amex from "./assets/amex.svg";
 import discover from "./assets/discover.png";
-import selo from "./assets/ChatGPT Image 3 de set. de 2025, 20_19_35.png"
+import selo from "./assets/ChatGPT Image 3 de set. de 2025, 20_19_35.png";
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -702,7 +702,7 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
             </div>
           </section>
 
-      {/* Offers Section */}
+          {/* Offers Section */}
           <section
             id="offers"
             className="py-12 bg-gradient-to-b from-green-50 to-white"
@@ -937,123 +937,123 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
             </div>
           </section>
 
-{/* Grid de Depoimentos */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-              {[
-                {
-                  name: "Sophie, 45 ans",
-                  text: "Grâce à SlimVita, j'ai retrouvé mon énergie et mon corps de rêve après 40 ans!",
-                },
-                {
-                  name: "Claire, 50 ans",
-                  text: "Je me sens plus confiante que jamais. Résultats incroyables!",
-                },
-                {
-                  name: "Amélie, 42 ans",
-                  text: "C'est le meilleur investissement que j'ai fait pour ma santé.",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 rounded-xl shadow-md overflow-hidden"
-                >
-                  <img
-                    src="https://www.tribunapr.com.br/wp-content/uploads/sites/1/2019/05/remedio-pixabay.jpg"
-                    alt={`Depoimento ${i + 1}`}
-                    className="w-full h-60 object-cover"
-                  />
-                  <div className="p-4">
-                    <p className="text-gray-700 text-sm">"{item.text}"</p>
-                    <span className="block text-green-700 text-sm font-semibold mt-2">
-                      — {item.name}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-  {/* FAQ Section */}
-          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-  <div className="container mx-auto px-4">
-    {/* Título */}
-    <div className="text-center max-w-3xl mx-auto mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
-        Domande Frequenti
-      </h2>
-      <p className="text-lg text-gray-700">
-        Le risposte alle domande più comuni dei nostri clienti.
-      </p>
-    </div>
-
-    <div className="max-w-3xl mx-auto space-y-4">
-      {[
-        {
-          q: "1. Depuis que j’ai commencé à prendre SlimVita, je sens mon corps plus léger et j’ai plus d’énergie. Est-ce normal ?",
-          a: "Oui ! C’est exactement ce qu’il faut attendre. SlimVita est le premier complément naturel au monde cliniquement formulé pour activer « l’hormone de la minceur » et accélérer la combustion des graisses profondes. En éliminant l’excès de cellules graisseuses accumulées et en restaurant l’équilibre naturel du corps… Vous vous sentez plus légère, plus disposée et pleine d’énergie pour la vie quotidienne.",
-        },
-        {
-          q: "2. Je prends déjà d’autres compléments et SlimVita semble avoir renforcé leurs effets. Est-ce vraiment le cas ?",
-          a: "Oui ! Les ingrédients naturels de SlimVita fonctionnent en synergie avec d’autres compléments. Beaucoup d’utilisateurs rapportent une amélioration non seulement de la perte de poids, mais aussi de la digestion, de la peau, de l’humeur et même de la qualité du sommeil.",
-        },
-        {
-          q: "3. Quels sont les ingrédients de SlimVita et comment fonctionnent-ils ?",
-          a: "SlimVita combine des ingrédients 100 % naturels comme le sel rose, la quercétine, la graine de guaraná et l’extrait de tucumã. Cette formule stimule la production naturelle de GLP-1… La même substance présente dans des médicaments comme l’Ozempic. Mais de façon sûre, sans aiguilles et jusqu’à 9 fois plus efficace que ces stylos injectables.",
-        },
-        {
-          q: "4. Comment dois-je prendre SlimVita ? Existe-t-il une façon correcte de l’utiliser et y a-t-il des contre-indications ?",
-          a: "SlimVita est super pratique et facile à utiliser. Il suffit de déposer la dose indiquée directement dans la bouche, exactement comme vous avez sûrement déjà vu certaines célébrités le faire, et voilà. Votre corps commence immédiatement à absorber les actifs naturels qui stimulent la production de GLP-1. La posologie recommandée est de 10 gouttes par jour (conformément aux indications sur l’emballage), pouvant être prises à tout moment de la journée. L’essentiel est de maintenir l’utilisation quotidienne pour maximiser les résultats. Concernant la sécurité, SlimVita est un produit naturel, c’est-à-dire zéro risque pour votre santé.",
-        },
-        {
-          q: "5. Pourquoi personne ne m’a parlé plus tôt de quelque chose d’aussi révolutionnaire que SlimVita ?",
-          a: "Excellente question ! SlimVita est véritablement une révolution dans l’amaigrissement naturel. Mais l’industrie de la minceur gagne des milliards avec des régimes radicaux, des médicaments pleins d’effets secondaires et des promesses vides. Nous avons choisi de transformer des vies en silence, en aidant des milliers de personnes à maigrir de manière saine et définitive.",
-        },
-        {
-          q: "6. Mon mari n’arrête pas de me regarder et de me désirer, et certaines amies sont curieuses de mon petit secret… Est-ce normal ?",
-          a: "Oui, cela arrive souvent ! SlimVita agit de l’intérieur vers l’extérieur, aidant votre corps à éliminer l’excès de poids et à dégonfler naturellement. Le résultat ne se voit pas seulement sur la balance, mais aussi dans le miroir et dans votre énergie : Vous commencez à vous sentir plus légère, plus confiante et avec une estime de soi renouvelée. Ce changement est si visible que le regard des gens autour de vous change. Beaucoup de clientes rapportent exactement cela : leur mari remarque davantage, les complimente, les désire… Et les amies ne résistent pas à demander quel est le petit secret derrière une telle transformation.",
-        },
-        {
-          q: "7. J’ai passé ma commande et elle est arrivée en seulement trois jours. Est-ce normal ?",
-          a: "Oui ! Dès que votre commande est confirmée sur notre page 100 % sécurisée, elle est expédiée rapidement. Le délai moyen est de 3 à 5 jours ouvrés, mais beaucoup de clients reçoivent avant ce délai.",
-        },
-        {
-          q: "8. J’ai reçu un e-mail disant que SlimVita pourrait être indisponible. Est-ce vrai ?",
-          a: "Malheureusement, oui. La forte demande, ajoutée au processus d’importation de certains ingrédients, peut affecter notre stock. C’est pourquoi il est important de garantir votre pack dès aujourd’hui.",
-        },
-        {
-          q: "9. Je veux commencer maintenant ! Que dois-je faire ?",
-          a: "C’est simple : cliquez sur le bouton ci-dessous, choisissez le meilleur pack pour vous et finalisez votre commande. Votre SlimVita arrivera sous 5 jours ouvrés maximum. Avec notre garantie de 180 jours, vous n’avez rien à perdre et tout à gagner.",
-        },
-      ].map((item, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-xl shadow-md border border-green-200 overflow-hidden"
-        >
-          <details className="group">
-            <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50">
-              <span>{item.q}</span>
-              <svg
-                className="w-5 h-5 text-green-600 transform group-open:rotate-180 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          {/* Grid de Depoimentos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            {[
+              {
+                name: "Sophie, 45 ans",
+                text: "Grâce à SlimVita, j'ai retrouvé mon énergie et mon corps de rêve après 40 ans!",
+              },
+              {
+                name: "Claire, 50 ans",
+                text: "Je me sens plus confiante que jamais. Résultats incroyables!",
+              },
+              {
+                name: "Amélie, 42 ans",
+                text: "C'est le meilleur investissement que j'ai fait pour ma santé.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-gray-100 rounded-xl shadow-md overflow-hidden"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
+                <img
+                  src="https://www.tribunapr.com.br/wp-content/uploads/sites/1/2019/05/remedio-pixabay.jpg"
+                  alt={`Depoimento ${i + 1}`}
+                  className="w-full h-60 object-cover"
                 />
-              </svg>
-            </summary>
-            <div className="px-6 pb-4 text-gray-700 text-sm whitespace-pre-line">
-              {item.a}
+                <div className="p-4">
+                  <p className="text-gray-700 text-sm">"{item.text}"</p>
+                  <span className="block text-green-700 text-sm font-semibold mt-2">
+                    — {item.name}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ Section */}
+          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
+            <div className="container mx-auto px-4">
+              {/* Título */}
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+                  Domande Frequenti
+                </h2>
+                <p className="text-lg text-gray-700">
+                  Le risposte alle domande più comuni dei nostri clienti.
+                </p>
+              </div>
+
+              <div className="max-w-3xl mx-auto space-y-4">
+                {[
+                  {
+                    q: "1. Depuis que j’ai commencé à prendre SlimVita, je sens mon corps plus léger et j’ai plus d’énergie. Est-ce normal ?",
+                    a: "Oui ! C’est exactement ce qu’il faut attendre. SlimVita est le premier complément naturel au monde cliniquement formulé pour activer « l’hormone de la minceur » et accélérer la combustion des graisses profondes. En éliminant l’excès de cellules graisseuses accumulées et en restaurant l’équilibre naturel du corps… Vous vous sentez plus légère, plus disposée et pleine d’énergie pour la vie quotidienne.",
+                  },
+                  {
+                    q: "2. Je prends déjà d’autres compléments et SlimVita semble avoir renforcé leurs effets. Est-ce vraiment le cas ?",
+                    a: "Oui ! Les ingrédients naturels de SlimVita fonctionnent en synergie avec d’autres compléments. Beaucoup d’utilisateurs rapportent une amélioration non seulement de la perte de poids, mais aussi de la digestion, de la peau, de l’humeur et même de la qualité du sommeil.",
+                  },
+                  {
+                    q: "3. Quels sont les ingrédients de SlimVita et comment fonctionnent-ils ?",
+                    a: "SlimVita combine des ingrédients 100 % naturels comme le sel rose, la quercétine, la graine de guaraná et l’extrait de tucumã. Cette formule stimule la production naturelle de GLP-1… La même substance présente dans des médicaments comme l’Ozempic. Mais de façon sûre, sans aiguilles et jusqu’à 9 fois plus efficace que ces stylos injectables.",
+                  },
+                  {
+                    q: "4. Comment dois-je prendre SlimVita ? Existe-t-il une façon correcte de l’utiliser et y a-t-il des contre-indications ?",
+                    a: "SlimVita est super pratique et facile à utiliser. Il suffit de déposer la dose indiquée directement dans la bouche, exactement comme vous avez sûrement déjà vu certaines célébrités le faire, et voilà. Votre corps commence immédiatement à absorber les actifs naturels qui stimulent la production de GLP-1. La posologie recommandée est de 10 gouttes par jour (conformément aux indications sur l’emballage), pouvant être prises à tout moment de la journée. L’essentiel est de maintenir l’utilisation quotidienne pour maximiser les résultats. Concernant la sécurité, SlimVita est un produit naturel, c’est-à-dire zéro risque pour votre santé.",
+                  },
+                  {
+                    q: "5. Pourquoi personne ne m’a parlé plus tôt de quelque chose d’aussi révolutionnaire que SlimVita ?",
+                    a: "Excellente question ! SlimVita est véritablement une révolution dans l’amaigrissement naturel. Mais l’industrie de la minceur gagne des milliards avec des régimes radicaux, des médicaments pleins d’effets secondaires et des promesses vides. Nous avons choisi de transformer des vies en silence, en aidant des milliers de personnes à maigrir de manière saine et définitive.",
+                  },
+                  {
+                    q: "6. Mon mari n’arrête pas de me regarder et de me désirer, et certaines amies sont curieuses de mon petit secret… Est-ce normal ?",
+                    a: "Oui, cela arrive souvent ! SlimVita agit de l’intérieur vers l’extérieur, aidant votre corps à éliminer l’excès de poids et à dégonfler naturellement. Le résultat ne se voit pas seulement sur la balance, mais aussi dans le miroir et dans votre énergie : Vous commencez à vous sentir plus légère, plus confiante et avec une estime de soi renouvelée. Ce changement est si visible que le regard des gens autour de vous change. Beaucoup de clientes rapportent exactement cela : leur mari remarque davantage, les complimente, les désire… Et les amies ne résistent pas à demander quel est le petit secret derrière une telle transformation.",
+                  },
+                  {
+                    q: "7. J’ai passé ma commande et elle est arrivée en seulement trois jours. Est-ce normal ?",
+                    a: "Oui ! Dès que votre commande est confirmée sur notre page 100 % sécurisée, elle est expédiée rapidement. Le délai moyen est de 3 à 5 jours ouvrés, mais beaucoup de clients reçoivent avant ce délai.",
+                  },
+                  {
+                    q: "8. J’ai reçu un e-mail disant que SlimVita pourrait être indisponible. Est-ce vrai ?",
+                    a: "Malheureusement, oui. La forte demande, ajoutée au processus d’importation de certains ingrédients, peut affecter notre stock. C’est pourquoi il est important de garantir votre pack dès aujourd’hui.",
+                  },
+                  {
+                    q: "9. Je veux commencer maintenant ! Que dois-je faire ?",
+                    a: "C’est simple : cliquez sur le bouton ci-dessous, choisissez le meilleur pack pour vous et finalisez votre commande. Votre SlimVita arrivera sous 5 jours ouvrés maximum. Avec notre garantie de 180 jours, vous n’avez rien à perdre et tout à gagner.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-md border border-green-200 overflow-hidden"
+                  >
+                    <details className="group">
+                      <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50">
+                        <span>{item.q}</span>
+                        <svg
+                          className="w-5 h-5 text-green-600 transform group-open:rotate-180 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </summary>
+                      <div className="px-6 pb-4 text-gray-700 text-sm whitespace-pre-line">
+                        {item.a}
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
             </div>
-          </details>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+          </section>
 
           {/* Scientific References Section */}
           <section className="py-16 bg-gradient-to-b from-white to-green-50">
@@ -1095,148 +1095,6 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
                     </p>
                   </div>
                 ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Promotional CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-green-600 to-green-800">
-            <div className="container mx-auto px-4 text-center">
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Vuoi trasformare il tuo corpo in modo naturale e veloce?
-                </h2>
-                <p className="text-xl text-green-100 mb-8">
-                  Clicca sul pulsante qui sotto per assicurarti il tuo Nutrivex
-                  prima che le ultime unità si esauriscano.
-                </p>
-                <button
-                  onClick={scrollToOffers}
-                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
-                >
-                  SÌ! Voglio il mio Nutrivex ora!
-                </button>
-              </div>
-            </div>
-          </section>
-
-          {/* Guarantee Section */}
-          <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
-            <div className="container mx-auto px-4 text-center">
-              <div className="max-w-3xl mx-auto">
-                <div className="flex justify-center mb-6">
-                  <Shield className="w-20 h-20 text-green-600" />
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-                  Soddisfazione Garantita
-                </h2>
-                <p className="text-xl text-gray-700 mb-4">
-                  o rimborso completo entro{" "}
-                  <span className="font-bold text-green-700">90 giorni!</span>
-                </p>
-                <p className="text-lg text-gray-600">
-                  Se non sei soddisfatto dei risultati, rimborsiamo il 100% del
-                  tuo investimento. Senza domande, senza burocrazia.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Benefits Section */}
-          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-                  Perché scegliere Nutrivex?
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {[
-                  {
-                    icon: <Leaf className="w-8 h-8" />,
-                    title: "Formula 100% naturale",
-                  },
-                  {
-                    icon: <Heart className="w-8 h-8" />,
-                    title: "Ingredienti di origine vegetale",
-                  },
-                  {
-                    icon: <CheckCircle className="w-8 h-8" />,
-                    title: "Sem OGM",
-                  },
-                  {
-                    icon: <Zap className="w-8 h-8" />,
-                    title: "Facile da usare (in gocce)",
-                  },
-                  {
-                    icon: <Shield className="w-8 h-8" />,
-                    title: "Senza stimolanti",
-                  },
-                  {
-                    icon: <Star className="w-8 h-8" />,
-                    title: "Non crea dipendenza",
-                  },
-                ].map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-md"
-                  >
-                    <div className="text-green-600">{benefit.icon}</div>
-                    <span className="font-semibold text-gray-800">
-                      {benefit.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonials Section */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-                  Cosa dicono i nostri clienti
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 text-yellow-500 fill-current"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic mb-4">
-                    "Ho perso 8kg in sole 3 settimane! Più energia, meno fame e
-                    autostima alle stelle."
-                  </p>
-                  <p className="font-semibold text-green-900">
-                    Maria S., 38 anni
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 text-yellow-500 fill-current"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic mb-4">
-                    "Finalmente sono riuscito a dimagrire senza soffrire! Lo
-                    consiglio a tutti."
-                  </p>
-                  <p className="font-semibold text-green-900">
-                    Paolo M., 45 anni
-                  </p>
-                </div>
               </div>
             </div>
           </section>
@@ -1295,8 +1153,6 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
               </div>
             </div>
           </section>
-
-
 
           {/* Section: Livraison Gratuite + Avantages (com caminhão) */}
           <section className="bg-gradient-to-r from-green-800 to-green-500 text-white py-16">
