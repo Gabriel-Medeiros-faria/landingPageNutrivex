@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./index.css";
 import {
   X,
   CheckCircle,
@@ -11,20 +12,39 @@ import {
   Clock,
   Award,
 } from "lucide-react";
-import oneBottle from "./assets/1Flacon.jpg";
-import threeBottles from "./assets/3flacons.png";
-import sixBottles from "./assets/6flacons.png";
+import oneBottle from "./assets/1 flacon - sem fundo.png";
+import threeBottles from "./assets/3 flacons - sem fundo.png";
+import sixBottles from "./assets/6 flacons - sem fundo.png";
 import visa from "./assets/visa.svg";
 import master from "./assets/master.png";
 import amex from "./assets/amex.svg";
 import discover from "./assets/discover.png";
 import selo from "./assets/ChatGPT Image 3 de set. de 2025, 20_19_35.png";
+import popup from "./assets/Popup (1).png";
+import selo2 from "./assets/Selos.png";
+import caminhao from "./assets/caminhao.png";
+import mokup1 from "./assets/mockup 01.png";
+import mokup2 from "./assets/mockup 02.png";
+import mokup3 from "./assets/mockup 03.png";
+import mokup4 from "./assets/mockup 04.png";
+import mokup5 from "./assets/mockup 05.png";
+import mokup6 from "./assets/mockup 06.png";
+import mokup7 from "./assets/BONUSPRESENT 07.png";
 
+import fruta1 from "./assets/How-long-does-it-take-berberine-to-work-768x512.webp";
+import fruta2 from "./assets/Guarana_brule_graisse_amoseeds_specialiste_des_super_aliments_bio_7026c0da-529b-456a-8209-df0d91dfcb5b.jpg";
+import fruta3 from "./assets/kwercetyna.webp";
+import fruta4 from "./assets/52.jpg";
+import famosa1 from "./assets/famosa1.jpeg";
+import famosa2 from "./assets/famosa2.jpeg";
+import famosa3 from "./assets/famosa3.jpeg";
+import famosa4 from "./assets/famosa4.jpeg";
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [videoTime, setVideoTime] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const [flacons, setFlacons] = useState(48);
   // Configuração: tempo em segundos para desbloquear (5 minutos = 300 segundos)
   const UNLOCK_TIME = 10; // Reduzido para 10 segundos para demonstração - altere para 300 para 5 minutos
   const fullText = `SlimVita possède une garantie solide de 180 jours. En fait, je veux faire un défi de 180 jours avec vous… Oui, si en 180 jours vous essayez cette formule SlimVita… … et si, par hasard, vous ne voyez PAS votre poids chuter ni vos mesures diminuer après avoir utilisé notre formule… Ou si personne ne vous complimente en disant combien vous avez maigri pendant cette période.
@@ -65,13 +85,22 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
     // Popup recorrente a cada 2 minutos após o primeiro
     const recurringPopup = setInterval(() => {
       setShowPopup(true);
-    }, 120000);
+    }, 300000);
 
     return () => {
       clearTimeout(initialPopup);
       clearInterval(recurringPopup);
     };
   }, []);
+  //TEMPO DO ESTOQUE
+  useEffect(() => {
+    if (flacons > 0) {
+      const interval = setInterval(() => {
+        setFlacons((prev) => prev - 1);
+      }, 10000); // A cada 1 segundo diminui 1
+      return () => clearInterval(interval); // Limpa o intervalo ao desmontar
+    }
+  }, [flacons]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -84,7 +113,7 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-white-50 to-white relative overflow-x-hidden">
       {/* Header Warning Bar */}
       <div className="bg-gradient-to-r from-red-700 to-red-800 text-yellow-100 py-3 px-4 text-center font-semibold text-sm md:text-base sticky top-0 z-40">
         <div className="flex items-center justify-center space-x-2">
@@ -100,81 +129,20 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
       <div className="container mx-auto px-4 py-8">
         <div className="text-center max-w-4xl mx-auto">
           {/* Video Section */}
-          <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 mb-8">
-            <div className="aspect-video rounded-xl overflow-hidden mb-4">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example&controls=1&modestbranding=1&rel=0"
-                title="Nutrivex - Video Presentazione"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
-            </div>
-            {!isUnlocked && (
-              <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
-                <p className="text-yellow-800 text-sm">
-                  ⏳ Attendi {UNLOCK_TIME - videoTime} secondi per sbloccare il
-                  contenuto completo
-                </p>
-              </div>
-            )}
-            {/* Texto Révélé acima da div URGENT */}
-            <p className="text-center text-gray-700 text-base md:text-lg font-medium mb-6 max-w-3xl mx-auto">
-              <span className="font-bold text-green-700">Révélé :</span> le
-              secret
-              <span className="italic">
-                {" "}
-                presque inconnu des célébrités américaines
-              </span>
-              pour avoir un corps{" "}
-              <span className="font-semibold text-green-800">
-                jeune, sexy et enviable
-              </span>{" "}
-              après 40 ans.
-            </p>
 
-            <div className="bg-white border border-green-200 rounded-2xl shadow-md p-6 md:p-8 mb-8 text-center max-w-4xl mx-auto">
-              {/* Badge URGENT (com animação pulse) */}
-              <div className="inline-block bg-green-600 text-white text-xs md:text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase animate-pulse">
-                URGENT
-              </div>
-
-              {/* Headline */}
-              <h2 className="text-green-800 text-2xl md:text-3xl font-extrabold leading-snug mb-4">
-                Deux actrices sont enquêtées pour avoir perdu{" "}
-                <span className="text-green-600 underline">
-                  36 kg en 3 semaines
-                </span>
-              </h2>
-
-              {/* Subtítulo */}
-              <p className="text-gray-800 text-lg md:text-xl font-semibold mb-3">
-                Pourquoi les grandes industries pharmaceutiques{" "}
-                <span className="underline text-green-700">NE veulent PAS</span>{" "}
-                que vous découvriez cela ?!
-              </p>
-
-              {/* Corpo */}
-              <p className="text-gray-600 text-base md:text-lg mb-6">
-                Le secret venu directement de la{" "}
-                <strong className="text-green-700">mer de l’Himalaya</strong>,
-                qui rend les célébrités américaines
-                <em> minces, sexy et enviables</em> après 40 ans, a été révélé.
-              </p>
-
-              {/* Link para VSL */}
-              <a
-                href="#"
-                className="inline-flex items-center justify-center text-green-700 font-bold hover:text-green-900 transition underline text-lg"
-              >
-                ▶ Regardez cette présentation ci-dessous, avant que la Big
-                Pharma ne la retire.
-              </a>
-            </div>
+          <div className="aspect-video rounded-xl overflow-hidden mb-4">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example&controls=1&modestbranding=1&rel=0"
+              title="Nutrivex - Video Presentazione"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded-xl"
+            ></iframe>
           </div>
+          <img src={selo2} />
         </div>
       </div>
 
@@ -199,234 +167,293 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
       {/* Unlocked Content */}
       {isUnlocked && (
         <>
-          <section
-            id="offers"
-            className="py-12 bg-gradient-to-b from-green-50 to-white"
-          >
-            <div className="container mx-auto px-4">
-              {/* Header */}
-              <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-2">
-                  Scegli il tuo piano Nutrivex
-                </h2>
-                <p className="text-base text-gray-600">
-                  Trasforma la tua vita con i nostri piani speciali
+          <section className="bg-[rgb(240,253,244)] py-6">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+                Choisissez votre forfait SlimVita avec notre <br />
+                remise spéciale à durée limitée !
+              </h2>
+
+              <p className="mt-2 text-lg font-semibold text-gray-800 flex justify-center items-center gap-2">
+                <span className="text-xl">⏳</span> Flacons SlimVita restantes:{" "}
+                <span className="font-extrabold text-green-700">{flacons}</span>
+              </p>
+            </div>
+          </section>
+          <div className="mb-5 mt-8 flex justify-center mt-4">
+            <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-xl px-6 py-4 shadow-sm max-w-2xl">
+              {/* Ícone caminhão */}
+              <img className="w-[100px] h-[50px]" src={caminhao} />
+
+              {/* Texto */}
+              <div className="text-left">
+                <p className="text-base md:text-lg font-semibold text-gray-900">
+                  Profitez de la{" "}
+                  <span className="text-green-700">LIVRAISON GRATUITE</span> sur
+                  les commandes de 3 et 6 flacons !
+                </p>
+                <p className="text-sm text-gray-600 mt-1">
+                  *Pour des résultats à long terme, nous recommandons l’option 6
+                  flacons.
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {/* PACKAGE 1 - BASIC */}
-                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-300 transition-all duration-300">
+            </div>
+          </div>
+          <section id="offers" className="py-12 bg-white">
+            <div className="container mx-auto px-4">
+              {/* Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+                {/* BASIQUE */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-slate-700 text-white px-4 py-1 rounded-full text-xs font-bold">
-                      BASIC
+                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      BASIQUE
                     </span>
                   </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      1 BOTTLE
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      1 FLACON
                     </h3>
-                    <div className="inline-block text-sm font-semibold text-gray-600">
-                      60 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center mb-3">
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 30 JOURS
+                    </p>
+
                     <img
                       src={oneBottle}
-                      alt="Nutrivex 1 Bottle"
-                      className="w-24 h-32 object-cover"
+                      alt="Nutrivex - 1 bouteille"
+                      className="h-[200px] object-contain mb-8 mt-5" // ↓ diminuiu 5%
                     />
-                  </div>
-                  <div className="text-center mb-2">
-                    <p className="text-4xl font-extrabold text-slate-900">
-                      $79
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      89€
                     </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACON
                     </p>
-                  </div>
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-slate-300 rounded-lg py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        YOU SAVE $140!
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 140 $ !
                       </p>
                     </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
                       </p>
                     </div>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
-                      <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$298</span>{" "}
-                      <span className="font-bold text-slate-900">$158</span>
-                    </p>
-                    <p className="text-sm text-gray-700 mt-1">+ SHIPPING</p>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$298</span>{" "}
+                        <span className="font-bold">$158</span>
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">+ LIVRAISON</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* PACKAGE 2 - BEST VALUE */}
-                <div className="relative bg-white rounded-2xl shadow-2xl p-6 border-4 border-green-600 transform scale-105">
+                {/* MEILLEUR RAPPORT QUALITÉ/PRIX */}
+                <div
+                  style={{ backgroundColor: "rgb(240, 253, 244)" }}
+                  className="relative rounded-2xl p-6 border-2 ring-2 ring-green-500 border-gray-100 shadow-2xl transform scale-105 text-center hover:shadow-2xl transition flex flex-col h-full"
+                >
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-extrabold">
-                      BEST VALUE!
+                    <span className="bg-green-600 text-white px-5 py-2 rounded-full text-sm font-extrabold tracking-wide whitespace-nowrap shadow-md">
+                      LE PLUS POPULAIRE
                     </span>
                   </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      BUY 3 GET + 3 FREE
-                    </h3>
-                    <div className="inline-block text-base font-semibold text-green-700">
-                      180 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <img
-                      src={sixBottles}
-                      alt="Nutrivex 6 Bottles"
-                      className="w-48 h-auto object-cover"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-extrabold text-slate-900 -mt-9">
-                      $49
-                    </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
-                    </p>
-                  </div>
 
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-green-600 py-1">
-                      <p className="text-green-700 font-bold text-base">
-                        YOU SAVE $600!
-                      </p>
-                    </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        BIGGEST DISCOUNT
-                      </p>
-                    </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        + 2 FREE BONUSES
-                      </p>
-                    </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
-                      </p>
-                    </div>
-                  </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-xl">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-green-800 mt-6">
+                      3 FLACONS + 3 GRATUITS
+                    </h3>
+                    <p className="text-sm font-bold text-black-800 mb-3">
+                      CURE 180 JOURS
+                    </p>
+
+                    <div className="relative w-[320px] pb-[10rem]">
+                      {" "}
+                      {/* Container relativo com largura igual à imagem */}
                       <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-8 w-14 object-contain border border-slate-300 rounded-md"
+                        src={sixBottles}
+                        alt="Nutrivex - 6 bouteilles"
+                        className="h-[340px] pl-7 object-contain"
                       />
-                    ))}
+                      <div
+                        className="absolute pt-3 left-0 right-0"
+                        style={{ top: "260px" }} // Ajusta a distância do topo para ficar perto da imagem
+                      >
+                        <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                          48€
+                        </p>
+                        <p className="text-sm font-semibold text-gray-700 mb-0">
+                          PAR FLACONS
+                        </p>
+
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-green-600 font-bold mb-0">
+                            VOUS ÉCONOMISEZ 600 $ !
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            PLUS GRANDE REMISE
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            + 2 BONUS OFFERTS
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            GARANTIE 60 JOURS
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$894</span>{" "}
-                      <span className="font-bold text-slate-900">$294</span>
-                    </p>
-                    <p className="text-sm text-green-700 mt-1 font-semibold">
-                      + FREE SHIPPING
-                    </p>
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-xl shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-8 w-14 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$894</span>{" "}
+                        <span className="font-bold">$294</span>
+                      </p>
+                      <p className="text-sm text-green-700 mt-1 font-semibold">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* PACKAGE 3 - MOST POPULAR */}
-                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-500 transition-all duration-300">
+                {/* PACK */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold">
-                      MOST POPULAR
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      PACK
                     </span>
                   </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      BUY 2 GET + 1 FREE
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      2 FLACONS + 1 GRATUIT
                     </h3>
-                    <div className="inline-block text-sm font-semibold text-green-600">
-                      90 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center mb-3">
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 90 JOURS
+                    </p>
+
                     <img
                       src={threeBottles}
-                      alt="Nutrivex 3 Bottles"
-                      className="w-32 h-auto object-cover"
+                      alt="Nutrivex - 3 bouteilles"
+                      className="h-[220px] object-contain mb-4" // manteve
                     />
-                  </div>
-                  <div className="text-center mb-2">
-                    <p className="text-4xl font-extrabold text-slate-900">
-                      $69
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      59€
                     </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACONS
                     </p>
-                  </div>
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-green-500 py-1">
-                      <p className="text-green-600 font-bold text-base">
-                        YOU SAVE $300!
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 300 $ !
                       </p>
                     </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        + 1 FREE BONUS
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        + 1 BONUS OFFERT
                       </p>
                     </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
                       </p>
                     </div>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
-                      <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$447</span>{" "}
-                      <span className="font-bold text-slate-900">$207</span>
-                    </p>
-                    <p className="text-sm text-green-600 mt-1">
-                      + FREE SHIPPING
-                    </p>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$447</span>{" "}
+                        <span className="font-bold">$207</span>
+                      </p>
+                      <p className="text-sm text-green-600 mt-1">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -508,62 +535,121 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
           {/* Seção Ingredientes */}
           <section className="bg-white py-12 px-4 md:px-8">
             {/* Título */}
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-              Une formule{" "}
-              <span className="text-green-700">100 % naturelle</span>, produite
-              avec :
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-              {[
-                {
-                  title: "Bérbérine",
-                  desc: "Un fruit exotique de l’Amazonie, riche en un composant actif appelé bérbérine.",
-                  extra:
-                    "La bérbérine est un antioxydant extrêmement puissant, capable de réduire l’inflammation cellulaire jusqu’à 86 %.",
-                  img: "https://img.freepik.com/photos-premium/baies-rouges-naturelles-exotiques-isolees-fond-blanc_118047-9727.jpg",
-                },
-                {
-                  title: "Graine de guaraná",
-                  desc: "Le guaraná est l’un des fruits les plus emblématiques du Brésil.",
-                  extra:
-                    "Des études confirment que c’est l’un des fruits les plus efficaces pour brûler la graisse naturellement.",
-                  img: "https://img.freepik.com/fotos-premium/fruta-guarana-fundo-branco_35641-1021.jpg",
-                },
-                {
-                  title: "Quercétine",
-                  desc: "Un flavonoïde puissant trouvé dans certains fruits.",
-                  extra:
-                    "Limite la formation de nouvelles cellules graisseuses, régule le glucose et agit sur la satiété.",
-                  img: "https://img.freepik.com/fotos-gratis/frutas-frescas-em-fundo-branco_144627-14565.jpg",
-                },
-                {
-                  title: "Sel rose",
-                  desc: "Un véritable trésor minéral contenant plus de 80 minéraux bioactifs.",
-                  extra:
-                    "Régule l’insuline, améliore l’absorption du glucose et stimule la production naturelle de GLP-1.",
-                  img: "https://img.freepik.com/fotos-gratis/sal-rosa-himalaya-fundo-branco_123827-23865.jpg",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
-                >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-40 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-green-700">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-700 text-sm mt-2">{item.desc}</p>
-                    <p className="text-gray-600 text-xs mt-1">{item.extra}</p>
-                  </div>
+            <section className="py-16 bg-gradient-to-b from-green-50 to-white">
+              <div className="container mx-auto px-4">
+                {/* Título */}
+                <div className="text-center max-w-4xl mx-auto mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
+                    Une formule 100 % naturelle,
+                    <span className="text-green-700"> produite avec:</span> 
+                  </h2>
                 </div>
-              ))}
-            </div>
+
+                {/* Grid de Ingredientes */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  {[
+                    {
+                      name: "Bérbérine",
+                      desc: `Un fruit exotique de l’Amazonie, riche en un composant actif appelé bérbérine.
+La bérbérine est un antioxydant extrêmement puissant, capable de réduire l’inflammation cellulaire jusqu’à 86 %.`,
+
+                      img: fruta1,
+                      benefits: [
+                        "Reduces Favorise la perte de poids cells",
+                        "Aide à contrôler la glycémie",
+                        "Protège le cœur",
+                      ],
+                    },
+
+                    {
+                      name: "Graine de guaraná",
+                      desc: `Le guaraná est l’un des fruits les plus emblématiques du Brésil.
+Et de nombreuses études menées par des institutions renommées comme l’Inserm, Stanford et Johns Hopkins ont confirmé que le guaraná est l’un des fruits les plus efficaces pour brûler la graisse naturellement.`,
+
+                      img: fruta2,
+                      benefits: [
+                        "Increases Augmente l’énergie et réduit la fatigue levels",
+                        "Stimule la concentration et la mémoire",
+                        "Favorise la combustion des graisses",
+                      ],
+                    },
+                    {
+                      name: "Quercétine",
+                      desc: `Un flavonoïde puissant trouvé dans certains fruits.
+La quercétine limite la formation de nouvelles cellules graisseuses, améliore la sensibilité à l’insuline…
+Elle régule les niveaux de glucose dans le sang et stimule la production naturelle de GLP-1.
+En plus, la quercétine agit directement sur la satiété, réduisant l’appétit et l’apport calorique, de manière similaire aux médicaments synthétiques comme l’Ozempic et le Mounjaro.`,
+                      img: fruta3,
+                      benefits: [
+                        "Réduit la formation de nouvelles cellules graisseuses",
+                        "Améliore la sensibilité à l’insuline et régule la glycémie",
+                        "Augmente la satiété et aide à contrôler l’appétit",
+                      ],
+                    },
+
+                    {
+                      name: "Sel rose",
+                      desc: `Un véritable trésor minéral de la nature.
+Contrairement au sel commun, il contient plus de 80 minéraux bioactifs…
+Comme le magnésium, le potassium et le calcium, qui aident à équilibrer l’organisme et à favoriser la combustion des graisses.
+Ces minéraux contribuent à réguler l’insuline et améliorer l’absorption du glucose.
+Mais ce n’est pas tout : le sel rose influence également la production de l’hormone GLP-1, directement liée au contrôle de l’appétit et à la perte de graisse.`,
+
+                      img: fruta4,
+
+                      benefits: [
+                        "Riche en minéraux essentiels",
+                        "Régule l’insuline et le glucose",
+                        "Favorise la combustion des graisses",
+                      ],
+                    },
+                  ].map((ingredient, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100"
+                    >
+                      {/* Imagem */}
+                      <img
+                        src={ingredient.img}
+                        alt={ingredient.name}
+                        className="w-full h-40 object-cover"
+                      />
+                      {/* Conteúdo */}
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-green-900 mb-2">
+                          {ingredient.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4">
+                          {ingredient.desc}
+                        </p>
+                        {/* Benefícios */}
+                        <ul className="space-y-2">
+                          {ingredient.benefits.map((benefit, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start text-gray-700 text-sm"
+                            >
+                              <svg
+                                className="w-5 h-5 text-green-600 mr-2 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
             {/* Bônus */}
             <div className="py-20 bg-gradient-to-b from-green-50 to-white">
@@ -584,18 +670,42 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
                 </div>
 
                 <div className="max-w-4xl mx-auto relative">
-                  {/* Linha verde - ajustada para parar no último bonus */}
+                  {/* Linha verde */}
                   <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-green-700 hidden md:block pointer-events-none"></div>
 
                   <div className="space-y-8 relative z-10">
                     {[
-                      "La Méthode Taille de Rêve",
-                      "La Recette Secrète du Cocktail Indien",
-                      "Le Secret Anti-Effet Yoyo",
-                      "20 Façons d’Accélérer Votre Métabolisme à la Maison",
-                      "Le Protocole Zéro Rétention",
-                      "9 Recettes pour Contrôler le Diabète et la Glycémie",
-                      "Un Cadeau Final et Très Spécial → Avec le droit de participer au tirage au sort de 1.000 € d’achats chez H&M",
+                      {
+                        title: "La Méthode Taille de Rêve",
+                        img: mokup1,
+                      },
+                      {
+                        title: "La Recette Secrète du Cocktail Indien",
+                        img: mokup2,
+                      },
+                      {
+                        title: "Le Secret Anti-Effet Yoyo",
+                        img: mokup3,
+                      },
+                      {
+                        title:
+                          "20 Façons d’Accélérer Votre Métabolisme à la Maison",
+                          img: mokup4,
+                      },
+                      {
+                        title: "Le Protocole Zéro Rétention",
+                        img: mokup5,
+                      },
+                      {
+                        title:
+                          "9 Recettes pour Contrôler le Diabète et la Glycémie",
+                          img: mokup6,
+                      },
+                      {
+                        title:
+                          "Un Cadeau Final et Très Spécial → Avec le droit de participer au tirage au sort de 1.000 € d’achats chez H&M",
+                          img: mokup7,
+                      },
                     ].map((bonus, index, arr) => (
                       <div key={index} className="relative">
                         {/* Ponto da timeline */}
@@ -607,16 +717,27 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
                             index === arr.length - 1 ? "mb-0" : ""
                           }`}
                         >
-                          <div className="flex flex-col gap-4">
-                            <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full font-bold text-lg w-max">
-                              BONUS N°{index + 1}
-                            </span>
-                            <h3 className="text-xl font-semibold text-gray-800">
-                              {bonus}
-                            </h3>
-                            <p className="text-2xl font-bold text-yellow-500">
-                              GRATUIT
-                            </p>
+                          <div className="flex flex-col md:flex-row items-center gap-6">
+                            <div className="flex-1">
+                              <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full font-bold text-lg w-max">
+                                BONUS N°{index + 1}
+                              </span>
+                              <h3 className="text-xl font-semibold text-gray-800 mt-2">
+                                {bonus.title}
+                              </h3>
+                              <p className="text-2xl font-bold text-yellow-500 mt-2">
+                                GRATUIT
+                              </p>
+                            </div>
+
+                            {/* Imagem quando existir */}
+                            {bonus.img && (
+                              <img
+                                src={bonus.img}
+                                alt={bonus.title}
+                                className="w-50 md:w-52 lg:w-64 object-contain"
+                              />
+                            )}
                           </div>
                         </div>
                       </div>
@@ -703,236 +824,291 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
           </section>
 
           {/* Offers Section */}
-          <section
-            id="offers"
-            className="py-12 bg-gradient-to-b from-green-50 to-white"
-          >
+          <section id="offers" className="py-12 bg-white">
             <div className="container mx-auto px-4">
-              {/* Header */}
-              <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-2">
-                  Scegli il tuo piano Nutrivex
+              {/* Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+                {/* BASIQUE */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      BASIQUE
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      1 FLACON
+                    </h3>
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 30 JOURS
+                    </p>
+
+                    <img
+                      src={oneBottle}
+                      alt="Nutrivex - 1 bouteille"
+                      className="h-[200px] object-contain mb-8 mt-5" // ↓ diminuiu 5%
+                    />
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      89€
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACON
+                    </p>
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 140 $ !
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$298</span>{" "}
+                        <span className="font-bold">$158</span>
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">+ LIVRAISON</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* MEILLEUR RAPPORT QUALITÉ/PRIX */}
+                <div
+                  style={{ backgroundColor: "rgb(240, 253, 244)" }}
+                  className="relative rounded-2xl p-6 border-2 ring-2 ring-green-500 border-gray-100 shadow-2xl transform scale-105 text-center hover:shadow-2xl transition flex flex-col h-full"
+                >
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-5 py-2 rounded-full text-sm font-extrabold tracking-wide whitespace-nowrap shadow-md">
+                      LE PLUS POPULAIRE
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-green-800 mt-6">
+                      3 FLACONS + 3 GRATUITS
+                    </h3>
+                    <p className="text-sm font-bold text-black-800 mb-3">
+                      CURE 180 JOURS
+                    </p>
+
+                    <div className="relative w-[320px] pb-[10rem]">
+                      {" "}
+                      {/* Container relativo com largura igual à imagem */}
+                      <img
+                        src={sixBottles}
+                        alt="Nutrivex - 6 bouteilles"
+                        className="h-[340px] pl-7 object-contain"
+                      />
+                      <div
+                        className="absolute pt-3 left-0 right-0"
+                        style={{ top: "260px" }} // Ajusta a distância do topo para ficar perto da imagem
+                      >
+                        <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                          48€
+                        </p>
+                        <p className="text-sm font-semibold text-gray-700 mb-0">
+                          PAR FLACONS
+                        </p>
+
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-green-600 font-bold mb-0">
+                            VOUS ÉCONOMISEZ 600 $ !
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            PLUS GRANDE REMISE
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            + 2 BONUS OFFERTS
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            GARANTIE 60 JOURS
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-xl shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-8 w-14 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$894</span>{" "}
+                        <span className="font-bold">$294</span>
+                      </p>
+                      <p className="text-sm text-green-700 mt-1 font-semibold">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* PACK */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      PACK
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      2 FLACONS + 1 GRATUIT
+                    </h3>
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 90 JOURS
+                    </p>
+
+                    <img
+                      src={threeBottles}
+                      alt="Nutrivex - 3 bouteilles"
+                      className="h-[220px] object-contain mb-4" // manteve
+                    />
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      59€
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACONS
+                    </p>
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 300 $ !
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        + 1 BONUS OFFERT
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$447</span>{" "}
+                        <span className="font-bold">$207</span>
+                      </p>
+                      <p className="text-sm text-green-600 mt-1">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section: Témoignages Réels */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              {/* Título */}
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                  De Vraies Utilisatrices De SlimVita.
                 </h2>
-                <p className="text-base text-gray-600">
-                  Trasforma la tua vita con i nostri piani speciali
+                <p className="text-lg text-gray-700">
+                  De Vrais Résultats Qui Changent La Vie
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {/* PACKAGE 1 - BASIC */}
-                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-300 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-slate-700 text-white px-4 py-1 rounded-full text-xs font-bold">
-                      BASIC
-                    </span>
-                  </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      1 BOTTLE
-                    </h3>
-                    <div className="inline-block text-sm font-semibold text-gray-600">
-                      60 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center mb-3">
+              {/* Grid de Imagens */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto ">
+                {[famosa1, famosa2, famosa3, famosa4].map((img, index) => (
+                  <div key={index} className="flex justify-center">
                     <img
-                      src={oneBottle}
-                      alt="Nutrivex 1 Bottle"
-                      className="w-24 h-32 object-cover"
+                      src={img}
+                      alt={`Cliente ${index + 1}`}
+                      className="rounded-xl shadow-md object-cover w-40 h-60"
                     />
                   </div>
-                  <div className="text-center mb-2">
-                    <p className="text-4xl font-extrabold text-slate-900">
-                      $79
-                    </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
-                    </p>
-                  </div>
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-slate-300 rounded-lg py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        YOU SAVE $140!
-                      </p>
-                    </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
-                      </p>
-                    </div>
-                  </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
-                      <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$298</span>{" "}
-                      <span className="font-bold text-slate-900">$158</span>
-                    </p>
-                    <p className="text-sm text-gray-700 mt-1">+ SHIPPING</p>
-                  </div>
-                </div>
-
-                {/* PACKAGE 2 - BEST VALUE */}
-                <div className="relative bg-white rounded-2xl shadow-2xl p-6 border-4 border-green-600 transform scale-105">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-green-700 text-white px-4 py-1.5 rounded-full text-sm font-extrabold">
-                      BEST VALUE!
-                    </span>
-                  </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      BUY 3 GET + 3 FREE
-                    </h3>
-                    <div className="inline-block text-base font-semibold text-green-700">
-                      180 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <img
-                      src={sixBottles}
-                      alt="Nutrivex 6 Bottles"
-                      className="w-48 h-auto object-cover"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-extrabold text-slate-900 -mt-9">
-                      $49
-                    </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
-                    </p>
-                  </div>
-
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-green-600 py-1">
-                      <p className="text-green-700 font-bold text-base">
-                        YOU SAVE $600!
-                      </p>
-                    </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        BIGGEST DISCOUNT
-                      </p>
-                    </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        + 2 FREE BONUSES
-                      </p>
-                    </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
-                      </p>
-                    </div>
-                  </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-xl">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
-                      <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-8 w-14 object-contain border border-slate-300 rounded-md"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$894</span>{" "}
-                      <span className="font-bold text-slate-900">$294</span>
-                    </p>
-                    <p className="text-sm text-green-700 mt-1 font-semibold">
-                      + FREE SHIPPING
-                    </p>
-                  </div>
-                </div>
-
-                {/* PACKAGE 3 - MOST POPULAR */}
-                <div className="relative bg-white rounded-2xl shadow-xl p-5 border-4 border-slate-300 hover:border-green-500 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold">
-                      MOST POPULAR
-                    </span>
-                  </div>
-                  <div className="text-center mb-3 mt-1">
-                    <h3 className="text-2xl font-extrabold text-slate-900">
-                      BUY 2 GET + 1 FREE
-                    </h3>
-                    <div className="inline-block text-sm font-semibold text-green-600">
-                      90 DAY SUPPLY
-                    </div>
-                  </div>
-                  <div className="flex justify-center mb-3">
-                    <img
-                      src={threeBottles}
-                      alt="Nutrivex 3 Bottles"
-                      className="w-32 h-auto object-cover"
-                    />
-                  </div>
-                  <div className="text-center mb-2">
-                    <p className="text-4xl font-extrabold text-slate-900">
-                      $69
-                    </p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">
-                      PER BOTTLE
-                    </p>
-                  </div>
-                  <div className="text-center my-3">
-                    <div className="border-t-4 border-dashed border-green-500 py-1">
-                      <p className="text-green-600 font-bold text-base">
-                        YOU SAVE $300!
-                      </p>
-                    </div>
-                    <div className="border-t-4 border-b-4 border-dashed border-slate-300 py-1 mt-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        + 1 FREE BONUS
-                      </p>
-                    </div>
-                    <div className="border-b-4 border-dashed border-slate-300 py-1">
-                      <p className="text-slate-800 font-bold text-base">
-                        60 DAYS GUARANTEE
-                      </p>
-                    </div>
-                  </div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-lg text-lg">
-                    ADD TO CART
-                  </button>
-                  <div className="flex items-center justify-between gap-2 mt-3 opacity-90">
-                    {[visa, master, discover, amex].map((card, i) => (
-                      <img
-                        key={i}
-                        src={card}
-                        alt="Payment"
-                        className="h-6 w-12 object-contain border border-slate-300 rounded-md"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <p className="text-sm text-black">
-                      Total:{" "}
-                      <span className="line-through text-red-700">$447</span>{" "}
-                      <span className="font-bold text-slate-900">$207</span>
-                    </p>
-                    <p className="text-sm text-green-600 mt-1">
-                      + FREE SHIPPING
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
@@ -972,6 +1148,287 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
             ))}
           </div>
 
+          {/* Section: Livraison Gratuite + Avantages (com caminhão) */}
+          <div className="mb-5 mt-8 flex justify-center mt-4">
+            <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-xl px-6 py-4 shadow-sm max-w-2xl">
+              {/* Ícone caminhão */}
+              <img className="w-[100px] h-[50px]" src={caminhao} />
+
+              {/* Texto */}
+              <div className="text-left">
+                <p className="text-base md:text-lg font-semibold text-gray-900">
+                  Profitez de la{" "}
+                  <span className="text-green-700">LIVRAISON GRATUITE</span> sur
+                  les commandes de 3 et 6 flacons !
+                </p>
+                <p className="text-sm text-gray-600 mt-1">
+                  *Pour des résultats à long terme, nous recommandons l’option 6
+                  flacons.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <section id="offers" className="py-12 bg-white">
+            <div className="container mx-auto px-4">
+              {/* Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+                {/* BASIQUE */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      BASIQUE
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      1 FLACON
+                    </h3>
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 30 JOURS
+                    </p>
+
+                    <img
+                      src={oneBottle}
+                      alt="Nutrivex - 1 bouteille"
+                      className="h-[200px] object-contain mb-8 mt-5" // ↓ diminuiu 5%
+                    />
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      89€
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACON
+                    </p>
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 140 $ !
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$298</span>{" "}
+                        <span className="font-bold">$158</span>
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">+ LIVRAISON</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* MEILLEUR RAPPORT QUALITÉ/PRIX */}
+                <div
+                  style={{ backgroundColor: "rgb(240, 253, 244)" }}
+                  className="relative rounded-2xl p-6 border-2 ring-2 ring-green-500 border-gray-100 shadow-2xl transform scale-105 text-center hover:shadow-2xl transition flex flex-col h-full"
+                >
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-5 py-2 rounded-full text-sm font-extrabold tracking-wide whitespace-nowrap shadow-md">
+                      LE PLUS POPULAIRE
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-green-800 mt-6">
+                      3 FLACONS + 3 GRATUITS
+                    </h3>
+                    <p className="text-sm font-bold text-black-800 mb-3">
+                      CURE 180 JOURS
+                    </p>
+
+                    <div className="relative w-[320px] pb-[10rem]">
+                      {" "}
+                      {/* Container relativo com largura igual à imagem */}
+                      <img
+                        src={sixBottles}
+                        alt="Nutrivex - 6 bouteilles"
+                        className="h-[340px] pl-7 object-contain"
+                      />
+                      <div
+                        className="absolute pt-3 left-0 right-0"
+                        style={{ top: "260px" }} // Ajusta a distância do topo para ficar perto da imagem
+                      >
+                        <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                          48€
+                        </p>
+                        <p className="text-sm font-semibold text-gray-700 mb-0">
+                          PAR FLACONS
+                        </p>
+
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-green-600 font-bold mb-0">
+                            VOUS ÉCONOMISEZ 600 $ !
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            PLUS GRANDE REMISE
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            + 2 BONUS OFFERTS
+                          </p>
+                        </div>
+                        <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                          <p className="text-gray-800 font-semibold mb-0">
+                            GARANTIE 60 JOURS
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-xl shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-8 w-14 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$894</span>{" "}
+                        <span className="font-bold">$294</span>
+                      </p>
+                      <p className="text-sm text-green-700 mt-1 font-semibold">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* PACK */}
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                      PACK
+                    </span>
+                  </div>
+
+                  {/* topo */}
+                  <div className="flex flex-col items-center flex-1">
+                    <h3 className="text-2xl font-extrabold text-gray-900 mt-6">
+                      2 FLACONS + 1 GRATUIT
+                    </h3>
+                    <p className="text-sm font-bold text-gray-800 mb-3">
+                      CURE 90 JOURS
+                    </p>
+
+                    <img
+                      src={threeBottles}
+                      alt="Nutrivex - 3 bouteilles"
+                      className="h-[220px] object-contain mb-4" // manteve
+                    />
+
+                    <p className="font-inter font-medium tracking-tight text-7xl text-gray-900">
+                      59€
+                    </p>
+                    <p className="text-sm font-semibold text-gray-700 mt-1 mb-4">
+                      PAR FLACONS
+                    </p>
+
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-green-600 font-bold">
+                        VOUS ÉCONOMISEZ 300 $ !
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        + 1 BONUS OFFERT
+                      </p>
+                    </div>
+                    <div className="border-t border-dashed border-gray-300 py-2 w-full">
+                      <p className="text-gray-800 font-semibold">
+                        GARANTIE 60 JOURS
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* rodapé */}
+                  <div className="mt-auto">
+                    <a
+                      href="https://mvx-group.mycartpanda.com/checkout"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                      AJOUTER AU PANIER
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 mt-4 opacity-90">
+                      {[visa, master, discover, amex].map((card, i) => (
+                        <img
+                          key={i}
+                          src={card}
+                          alt="Paiement"
+                          className="h-6 w-12 object-contain border border-gray-300 rounded-md"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="text-center mt-3">
+                      <p className="text-sm text-gray-900">
+                        Total :{" "}
+                        <span className="line-through text-red-700">$447</span>{" "}
+                        <span className="font-bold">$207</span>
+                      </p>
+                      <p className="text-sm text-green-600 mt-1">
+                        + LIVRAISON GRATUITE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           {/* FAQ Section */}
           <section className="py-16 bg-gradient-to-b from-green-50 to-white">
             <div className="container mx-auto px-4">
@@ -1054,355 +1511,6 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
               </div>
             </div>
           </section>
-
-          {/* Scientific References Section */}
-          <section className="py-16 bg-gradient-to-b from-white to-green-50">
-            <div className="container mx-auto px-4">
-              <div className="text-center max-w-4xl mx-auto mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
-                  Riferimenti Scientifici
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Studi scientifici dimostrano che gli ingredienti di Nutrivex
-                  possiedono proprietà uniche per accelerare il metabolismo,
-                  ridurre il grasso corporeo e migliorare la salute generale.
-                </p>
-                <p className="text-base text-gray-600 mt-4">
-                  Vedi qui sotto alcune pubblicazioni riconosciute a livello
-                  mondiale:
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {[
-                  "Journal of Natural Medicine",
-                  "International Journal of Obesity",
-                  "Nutrition & Metabolism Research",
-                ].map((journal, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500"
-                  >
-                    <div className="flex items-center mb-3">
-                      <Award className="w-6 h-6 text-green-600 mr-2" />
-                      <h3 className="font-semibold text-green-900">
-                        {journal}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-sm">
-                      Studi dimostrano l'efficacia degli ingredienti naturali
-                      nella perdita di peso sana.
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Ingredients Section */}
-          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-                  Ingredienti Naturali
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {[
-                  {
-                    name: "Alginati",
-                    benefit: "Riduce il grasso, combatte le tossine",
-                  },
-                  {
-                    name: "Vitamina K12",
-                    benefit:
-                      "Regola il metabolismo e migliora la salute cardiovascolare",
-                  },
-                  {
-                    name: "RS3",
-                    benefit:
-                      "Fibra fermentabile che regola la glicemia e brucia grassi",
-                  },
-                  {
-                    name: "Camellia Sinensis",
-                    benefit: "Antiossidante e anti-infiammatorio",
-                  },
-                  {
-                    name: "Theobroma Cacao",
-                    benefit: "Aumenta energia e immunità",
-                  },
-                  {
-                    name: "Schisandra",
-                    benefit:
-                      "Accelera il metabolismo e previene l'invecchiamento precoce",
-                  },
-                ].map((ingredient, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500"
-                  >
-                    <h3 className="font-bold text-green-900 text-lg mb-2">
-                      {ingredient.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {ingredient.benefit}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Section: Livraison Gratuite + Avantages (com caminhão) */}
-          <section className="bg-gradient-to-r from-green-800 to-green-500 text-white py-16">
-            <div className="container mx-auto px-4 text-center">
-              {/* Caminhão */}
-              <div className="flex justify-center mb-6">
-                <svg
-                  viewBox="0 0 64 64"
-                  className="w-16 h-16 md:w-20 md:h-20 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  {/* Linhas de movimento */}
-                  <line x1="6" y1="30" x2="14" y2="30" />
-                  <line x1="2" y1="34" x2="12" y2="34" />
-                  {/* Baú */}
-                  <rect x="6" y="24" width="30" height="16" rx="2" />
-                  {/* Cabine + carroceria */}
-                  <path d="M36 24h10l6 8v8H36z" />
-                  {/* Janela da cabine */}
-                  <rect x="40" y="27" width="7" height="5" rx="1" />
-                  {/* Chão da carroceria */}
-                  <line x1="6" y1="40" x2="58" y2="40" />
-                  {/* Rodas */}
-                  <circle cx="18" cy="44" r="4" />
-                  <circle cx="46" cy="44" r="4" />
-                </svg>
-              </div>
-
-              {/* Título */}
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Chaque commande de{" "}
-                <span className="text-yellow-300">6 flacons</span> bénéficie
-                également de la{" "}
-                <span className="text-yellow-300">livraison GRATUITE !</span>
-              </h2>
-
-              {/* Subtítulo */}
-              <p className="text-sm md:text-base mb-8">
-                *96 % de nos clientes commandent 6 flacons (
-                <span className="italic">notre option recommandée</span>)
-              </p>
-
-              {/* Benefícios */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                {[
-                  "Formule Naturelle",
-                  "Ingrédients d'Origine Végétale",
-                  "Sans OGM",
-                  "Gouttes Faciles À Prendre",
-                  "Sans Stimulants",
-                  "Ne Crée Pas De Dépendance",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-white text-gray-900 rounded-xl shadow-md p-4 flex items-center justify-center font-semibold"
-                  >
-                    <svg
-                      className="w-5 h-5 text-green-600 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Section: Témoignages Réels */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4">
-              {/* Título */}
-              <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  De Vraies Utilisatrices De LipoMounj.
-                </h2>
-                <p className="text-lg text-gray-700">
-                  De Vrais Résultats Qui Changent La Vie.
-                </p>
-              </div>
-
-              {/* Grid de Imagens */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {[
-                  "https://www.ijlalhsn.com/wp-content/uploads/2023/04/girl-model-pictures--696x628.png",
-                  "https://www.ijlalhsn.com/wp-content/uploads/2023/04/girl-model-pictures--696x628.png",
-                  "https://www.ijlalhsn.com/wp-content/uploads/2023/04/girl-model-pictures--696x628.png",
-                  "https://www.ijlalhsn.com/wp-content/uploads/2023/04/girl-model-pictures--696x628.png",
-                ].map((img, index) => (
-                  <div key={index} className="flex justify-center">
-                    <img
-                      src={img}
-                      alt={`Cliente ${index + 1}`}
-                      className="rounded-xl shadow-md object-cover w-40 h-40"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Ingredients Section (Novo Estilo) */}
-          <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-            <div className="container mx-auto px-4">
-              {/* Título */}
-              <div className="text-center max-w-4xl mx-auto mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-                  Inside every drop of{" "}
-                  <span className="text-green-700">LipoMounj</span> you will
-                  find:
-                </h2>
-                <p className="text-lg text-gray-700">
-                  A unique proprietary blend of 6 rare, science-backed
-                  ingredients that promote
-                  <span className="font-semibold text-green-700">
-                    {" "}
-                    GLP-1
-                  </span>{" "}
-                  and
-                  <span className="font-semibold text-green-700">
-                    {" "}
-                    GIP
-                  </span>{" "}
-                  production to burn fat!
-                </p>
-              </div>
-
-              {/* Grid de Ingredientes */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {[
-                  {
-                    name: "Alginatos",
-                    desc: "An incredible nutrient found in seaweed, capable of helping your body stabilize insulin levels.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "Reduces fat cells",
-                      "Combats common toxins",
-                      "Reduces bad cholesterol",
-                    ],
-                  },
-                  {
-                    name: "Vitamin K12",
-                    desc: "Powerful nutrient that aids in metabolic regulation, creating a favorable environment for hormone secretion.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "Increases satiety levels",
-                      "Activates intestinal microbiota",
-                      "Reduces cardiovascular diseases",
-                    ],
-                  },
-                  {
-                    name: "RS3",
-                    desc: "Bioactive compound that acts as a fermentable fiber, promoting natural GLP-1 and GIP release.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "Powerful fat burner",
-                      "Activates good bacteria in the intestine",
-                      "Regulates blood sugar",
-                    ],
-                  },
-                  {
-                    name: "Camellia Sinensis",
-                    desc: "This plant has potent antioxidant and anti-inflammatory properties that improve insulin sensitivity.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "De-inflames fat cells",
-                      "Reduces oxidative stress",
-                      "Promotes cardiovascular health",
-                    ],
-                  },
-                  {
-                    name: "Theobroma Cacao",
-                    desc: "Tropical superfood overflowing with epicatechin, a natural flavonoid.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "Acts on insulin regulation",
-                      "Strengthens the immune system",
-                      "Increases physical and mental energy",
-                    ],
-                  },
-                  {
-                    name: "Schisandra",
-                    desc: "Powerful calorie-burning red berries brimming with antioxidant compounds.",
-                    img: "https://th.bing.com/th/id/OIP.jvf9gNNhr703jV6q_8CUgAHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-                    benefits: [
-                      "Promotes fat burning",
-                      "Accelerates metabolism",
-                      "Prevents premature aging",
-                    ],
-                  },
-                ].map((ingredient, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100"
-                  >
-                    {/* Imagem */}
-                    <img
-                      src={ingredient.img}
-                      alt={ingredient.name}
-                      className="w-full h-40 object-cover"
-                    />
-                    {/* Conteúdo */}
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-green-900 mb-2">
-                        {ingredient.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {ingredient.desc}
-                      </p>
-                      {/* Benefícios */}
-                      <ul className="space-y-2">
-                        {ingredient.benefits.map((benefit, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start text-gray-700 text-sm"
-                          >
-                            <svg
-                              className="w-5 h-5 text-green-600 mr-2 flex-shrink-0"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* Footer */}
           <footer className="bg-green-900 text-white py-12">
             <div className="container mx-auto px-4">
@@ -1455,25 +1563,17 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
 
             <div className="text-center">
               <div className="mb-6">
-                <Leaf className="w-16 h-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-green-900 mb-2">
-                  Perdere peso non è mai stato così facile
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Clicca su "Guarda" qui sotto e scopri i risultati incredibili
-                  che migliaia di persone hanno già ottenuto con Nutrivex.
-                </p>
+                {/* IMAGEM ADICIONADA */}
+                <img
+                  src={popup}
+                  alt="Popup Nutrivex"
+                  className="mx-auto mb-4 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
+                  onClick={() =>
+                    (window.location.href =
+                      "https://mvx-group.mycartpanda.com/checkout")
+                  }
+                />
               </div>
-
-              <button
-                onClick={() => {
-                  setShowPopup(false);
-                  scrollToOffers();
-                }}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                SÌ! Voglio provare Nutrivex e perdere peso velocemente!
-              </button>
             </div>
           </div>
         </div>
@@ -1481,5 +1581,4 @@ Après tout, bien qu’il existe des milliers d’hommes et de femmes qui ont r�
     </div>
   );
 }
-
 export default App;
