@@ -25,7 +25,7 @@ import Ingredients from "./Ingredients";
 import Popup from "./Popup";
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
-  
+
   const [videoTime, setVideoTime] = useState(0);
   const [flacons, setFlacons] = useState(48);
   const [animate, setAnimate] = useState(false);
@@ -46,7 +46,6 @@ function App() {
 
     return () => clearInterval(videoTimer);
   }, [isUnlocked]);
-
 
   //TEMPO DO ESTOQUE
   useEffect(() => {
@@ -147,36 +146,36 @@ function App() {
       )}
 
       {/* Unlocked Content */}
+
+      <section className="bg-[rgb(240,253,244)] py-6">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-xl leading-tight md:text-3xl font-extrabold text-gray-900">
+            Choisissez votre forfait SlimVita avec notre remise spéciale à durée
+            limitée !
+          </h2>
+
+          <p className="mt-3 text-base md:text-lg font-semibold text-gray-800 flex justify-center items-center gap-2">
+            <span
+              className={`text-lg md:text-xl inline-block transition-transform duration-700 ${
+                flipped ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              ⏳
+            </span>
+            Flacons SlimVita restantes:{" "}
+            <span
+              className={`font-extrabold text-green-700 transition-transform duration-500 ${
+                animate ? "scale-125 text-red-600" : ""
+              }`}
+            >
+              {flacons}
+            </span>
+          </p>
+        </div>
+      </section>
       {isUnlocked && (
         <>
           <section className="bg-white py-12 px-4 md:px-8">
-            <section className="bg-[rgb(240,253,244)] py-6">
-              <div className="container mx-auto px-4 text-center">
-                <h2 className="text-xl leading-tight md:text-3xl font-extrabold text-gray-900">
-                  Choisissez votre forfait SlimVita avec notre remise spéciale à
-                  durée limitée !
-                </h2>
-
-                <p className="mt-3 text-base md:text-lg font-semibold text-gray-800 flex justify-center items-center gap-2">
-                  <span
-                    className={`text-lg md:text-xl inline-block transition-transform duration-700 ${
-                      flipped ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    ⏳
-                  </span>
-                  Flacons SlimVita restantes:{" "}
-                  <span
-                    className={`font-extrabold text-green-700 transition-transform duration-500 ${
-                      animate ? "scale-125 text-red-600" : ""
-                    }`}
-                  >
-                    {flacons}
-                  </span>
-                </p>
-              </div>
-            </section>
-
             <Freight />
             <Product />
             {/* Título */}
@@ -209,7 +208,7 @@ function App() {
       )}
 
       {/* Popup Modal */}
-     <Popup/>
+      <Popup />
     </div>
   );
 }

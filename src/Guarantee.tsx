@@ -54,39 +54,43 @@ export default function Guarantee({ flacons, setFlacons }: GuaranteeProps) {
 
             {/* Texto com a seta no final */}
             <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {showMore ? fullText : shortText}
-              <button
-                aria-label={showMore ? "Réduire le texte" : "Afficher plus"}
-                onClick={() => setShowMore(!showMore)}
-                className="ml-2 align-middle text-green-900 hover:text-green-700"
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: 0,
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                  style={{
-                    display: "inline-block",
-                    verticalAlign: "middle",
-                    transform: showMore ? "rotate(180deg)" : "rotate(0deg)",
-                    transition: "transform 0.3s ease",
-                  }}
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </button>
-            </p>
+  <span className="align-middle">{showMore ? fullText : shortText}</span>
+
+  {/* Botão inline com hit-area maior + fallback para touch */}
+  <button
+    type="button"
+    aria-expanded={showMore}
+    onClick={() => setShowMore((s) => !s)}
+    onTouchStart={(e) => {
+      // evita que o toque gere comportamento indesejado (scroll brusco)
+      e.preventDefault();
+      setShowMore((s) => !s);
+    }}
+    className="ml-2 inline-flex items-center justify-center w-9 h-9 p-1 rounded focus:outline-none"
+    style={{ touchAction: "manipulation" }}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+      style={{
+        display: "inline-block",
+        verticalAlign: "middle",
+        transform: showMore ? "rotate(180deg)" : "rotate(0deg)",
+        transition: "transform 0.3s ease",
+      }}
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </button>
+</p>
+
           </div>
         </div>
       </section>
