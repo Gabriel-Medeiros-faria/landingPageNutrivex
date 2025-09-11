@@ -56,27 +56,28 @@ export default function FaqSection(){
                     key={index}
                     className="bg-white rounded-xl shadow-md border border-green-200 overflow-hidden"
                   >
-                    <details className="group">
-                      <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50">
-                        <span>{item.q}</span>
-                        <svg
-                          className="w-5 h-5 text-green-600 transform group-open:rotate-180 transition-transform duration-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </summary>
-                      <div className="px-6 pb-4 text-gray-700 text-sm whitespace-pre-line">
-                        {item.a}
-                      </div>
-                    </details>
+                 <details className="group">
+  <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-green-800 font-semibold hover:bg-green-50 [&::-webkit-details-marker]:hidden list-none">
+    <span>{item.q}</span>
+    <svg
+      className="w-6 h-6 text-green-600 transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  </summary>
+  <div className="px-6 pb-4 text-gray-700 text-sm whitespace-pre-line">
+    {item.a}
+  </div>
+</details>
+
                   </div>
                 ))}
               </div>
