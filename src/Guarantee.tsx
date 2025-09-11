@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import selo from "./assets/selo.jpeg"
+import selo from "./assets/selo.jpeg";
 
 const fullText = `SlimVita possède une garantie solide de 180 jours. En fait, je veux faire un défi de 180 jours avec vous… Oui, si en 180 jours vous essayez cette formule SlimVita… … et si, par hasard, vous ne voyez PAS votre poids chuter ni vos mesures diminuer après avoir utilisé notre formule… Ou si personne ne vous complimente en disant combien vous avez maigri pendant cette période.
   Nous vous rembourserons chaque centime de votre investissement. Il suffit d’envoyer un e-mail ou un message à notre support et nous procéderons immédiatement au remboursement !
@@ -54,43 +54,44 @@ export default function Guarantee({ flacons, setFlacons }: GuaranteeProps) {
 
             {/* Texto com a seta no final */}
             <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-  <span className="align-middle">{showMore ? fullText : shortText}</span>
+              <span className="align-middle">
+                {showMore ? fullText : shortText}
+              </span>
 
-  {/* Botão inline com hit-area maior + fallback para touch */}
-  <button
-    type="button"
-    aria-expanded={showMore}
-    onClick={() => setShowMore((s) => !s)}
-    onTouchStart={(e) => {
-      // evita que o toque gere comportamento indesejado (scroll brusco)
-      e.preventDefault();
-      setShowMore((s) => !s);
-    }}
-    className="ml-2 inline-flex items-center justify-center w-9 h-9 p-1 rounded focus:outline-none"
-    style={{ touchAction: "manipulation" }}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      viewBox="0 0 24 24"
-      style={{
-        display: "inline-block",
-        verticalAlign: "middle",
-        transform: showMore ? "rotate(180deg)" : "rotate(0deg)",
-        transition: "transform 0.3s ease",
-      }}
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
-  </button>
-</p>
-
+              {/* Botão inline com hit-area maior + fallback para touch */}
+              <button
+                type="button"
+                aria-expanded={showMore}
+                onClick={() => setShowMore((s) => !s)}
+                onTouchStart={(e) => {
+                  // evita que o toque gere comportamento indesejado (scroll brusco)
+                  e.preventDefault();
+                  setShowMore((s) => !s);
+                }}
+                className="ml-2 inline-flex items-center justify-center w-9 h-9 p-1 rounded focus:outline-none"
+                style={{ touchAction: "manipulation" }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                  style={{
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    transform: showMore ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.3s ease",
+                  }}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+            </p>
           </div>
         </div>
       </section>

@@ -147,7 +147,10 @@ function App() {
 
       {/* Unlocked Content */}
 
-      <section className="bg-[rgb(240,253,244)] py-6">
+      
+      {isUnlocked && (
+        <>
+        <section className="bg-[rgb(240,253,244)] py-6">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl leading-tight md:text-3xl font-extrabold text-gray-900">
             Choisissez votre forfait SlimVita avec notre remise spéciale à durée
@@ -173,8 +176,6 @@ function App() {
           </p>
         </div>
       </section>
-      {isUnlocked && (
-        <>
           <section className="bg-white py-12 px-4 md:px-8">
             <Freight />
             <Product />
