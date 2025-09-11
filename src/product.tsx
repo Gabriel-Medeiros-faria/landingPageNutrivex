@@ -10,9 +10,10 @@ export default function Product() {
   return (
     <>
       <section id="offers" className="py-12 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-5">
           {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 max-w-6xl mx-auto items-stretch">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 max-w-6xl mx-auto items-stretch">
+
             {/* BASIQUE */}
             <div className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all flex flex-col h-full text-center">
               {/* Badge */}

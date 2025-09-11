@@ -11,7 +11,7 @@ export default function Bonus() {
   return (
     <>
       <div className="py-7 bg-gradient-to-b from-green-50 to-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 from-green-50">
           {/* Título */}
           <div className="text-center  mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-6">
