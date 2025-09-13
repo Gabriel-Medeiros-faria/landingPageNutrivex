@@ -60,7 +60,7 @@ export default function Product() {
               {/* Rodapé */}
               <div className="mt-auto">
                 <a
-                  href="https://mvx-group.mycartpanda.com/checkout"
+                  href="https://mvx-group.mycartpanda.com/checkout/193835329:1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
@@ -155,7 +155,7 @@ export default function Product() {
               {/* Rodapé */}
               <div className="mt-auto">
                 <a
-                  href="https://mvx-group.mycartpanda.com/checkout"
+                  href="https://mvx-group.mycartpanda.com/checkout/193835332:1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-xl shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"
@@ -238,7 +238,7 @@ export default function Product() {
               {/* Rodapé */}
               <div className="mt-auto">
                 <a
-                  href="https://mvx-group.mycartpanda.com/checkout"
+                  href="https://mvx-group.mycartpanda.com/checkout/193835331:1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 rounded-lg text-lg shadow-md mt-6 transition-transform duration-300 hover:scale-[1.01]"

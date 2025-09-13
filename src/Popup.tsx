@@ -11,11 +11,11 @@ export default function Popup() {
     const initialPopup = setTimeout(() => {
       setShowPopup(true);
       setHasShown(true);
-    },30000);
+    }, 15000);
 
     const recurringPopup = setInterval(() => {
       setShowPopup(true);
-    }, 30000);
+    }, 15000);
 
     return () => {
       clearTimeout(initialPopup);
@@ -50,14 +50,20 @@ export default function Popup() {
 
             <div className="text-center">
               <div className="mb-6">
-               <img
-  src={popup}
-  alt="Popup Nutrivex"
-  className="mx-auto mb-4 rounded-lg shadow-md cursor-pointer 
+                <a
+                  href="https://mvx-group.mycartpanda.com/checkout/193835339:1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={popup}
+                    alt="Popup Nutrivex"
+                    className="mx-auto mb-4 rounded-lg shadow-md cursor-pointer 
              hover:scale-[1.02] hover:shadow-xl 
              active:scale-[0.98] active:shadow-lg 
              transition-transform duration-500"
-/>
+                  />
+                </a>
               </div>
             </div>
           </div>

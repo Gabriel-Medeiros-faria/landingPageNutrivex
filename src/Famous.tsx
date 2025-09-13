@@ -1,10 +1,11 @@
-import famosa1 from "./assets/famosa1.jpeg";
-import famosa2 from "./assets/famosa2.jpeg";
-import famosa3 from "./assets/famosa3.jpeg";
-import famosa4 from "./assets/famosa4.jpeg";
-import famosa5 from "./assets/famosa5.jpeg";
-import famosa6 from "./assets/famosa6.jpeg";
-
+import famosa1 from "./assets/famosa1.png";
+import famosa2 from "./assets/famosa2.png";
+import famosa4 from "./assets/famosa4.png";
+import famosa5 from "./assets/famosa5.png";
+import famosa6 from "./assets/famosa1.jpeg";
+import famosa7 from "./assets/famosa7.png";
+import famosa8 from "./assets/famosa8.png";
+import famosa9 from "./assets/famosa9.png";
 export default function Famous(){
     return(
         <>
@@ -22,7 +23,7 @@ export default function Famous(){
 
               {/* Grid de Imagens */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto ">
-                {[famosa1, famosa2, famosa3, famosa4, famosa5, famosa6].map((img, index) => (
+                {[famosa1, famosa2, famosa4, famosa5, famosa6,famosa7,famosa8,famosa9].map((img, index) => (
                   <div key={index} className="flex justify-center">
                     <img
                       src={img}
