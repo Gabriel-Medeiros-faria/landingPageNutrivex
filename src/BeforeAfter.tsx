@@ -8,6 +8,8 @@ import antesdepois7 from "./assets/antesdepois7.jpeg";
 import antesdepois8 from "./assets/antesdepois8.jpeg";
 
 export default function BeforeAfter() {
+
+  
   return (
     <>
       <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
