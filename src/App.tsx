@@ -23,17 +23,41 @@ import Testimonies from "./Testimonies";
 import BeforeAfter from "./BeforeAfter";
 import Ingredients from "./Ingredients";
 import Popup from "./Popup";
+
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
-
   const [videoTime, setVideoTime] = useState(0);
   const [flacons, setFlacons] = useState(48);
   const [animate, setAnimate] = useState(false);
-  const [flipped, setFlipped] = useState(false); // controla posição da ampulheta
+  const [flipped, setFlipped] = useState(false);
+
   // Configuração: tempo em segundos para desbloquear (5 minutos = 300 segundos)
   const UNLOCK_TIME = 10; // Reduzido para 10 segundos para demonstração - altere para 300 para 5 minutos
+
+  // Scripts de rastreamento (Utmify)
   useEffect(() => {
-    // Simular progresso do vídeo
+    // Pixel principal
+    (window as any).pixelId = "68c8bd730214e33c36d92978";
+    const pixelScript = document.createElement("script");
+    pixelScript.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+    pixelScript.async = true;
+    pixelScript.defer = true;
+    document.head.appendChild(pixelScript);
+
+    // Script de UTMs
+    const utmScript = document.createElement("script");
+    utmScript.src = "https://cdn.utmify.com.br/scripts/utms/latest.js";
+    utmScript.async = true;
+    utmScript.defer = true;
+    utmScript.setAttribute("data-utmify-prevent-xcod-sck", "");
+    utmScript.setAttribute("data-utmify-prevent-subids", "");
+    utmScript.setAttribute("data-utmify-ignore-iframe", "");
+    utmScript.setAttribute("data-utmify-is-cartpanda", "");
+    document.head.appendChild(utmScript);
+  }, []);
+
+  // Simula progresso do vídeo
+  useEffect(() => {
     const videoTimer = setInterval(() => {
       setVideoTime((prev) => {
         const newTime = prev + 1;
@@ -47,7 +71,7 @@ function App() {
     return () => clearInterval(videoTimer);
   }, [isUnlocked]);
 
-  //TEMPO DO ESTOQUE
+  // Estoque diminuindo
   useEffect(() => {
     if (flacons > 0) {
       const interval = setInterval(() => {
@@ -59,19 +83,19 @@ function App() {
             return 0;
           }
         });
-      }, 10000); // diminui a cada 10 segundos
+      }, 10000);
 
       return () => clearInterval(interval);
     }
   }, []);
 
-  // Animação sempre que o número muda
+  // Animação do estoque
   useEffect(() => {
     if (flacons > 0) {
       setAnimate(true);
-      setFlipped((prev) => !prev); // alterna a posição da ampulheta
+      setFlipped((prev) => !prev);
 
-      const timer = setTimeout(() => setAnimate(false), 800); // tempo da animação
+      const timer = setTimeout(() => setAnimate(false), 800);
       return () => clearTimeout(timer);
     }
   }, [flacons]);
@@ -85,11 +109,11 @@ function App() {
   const scrollToOffers = () => {
     document.getElementById("offers")?.scrollIntoView({ behavior: "smooth" });
   };
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, "0"); // garante 2 dígitos
-  const month = String(today.getMonth() + 1).padStart(2, "0"); // meses começam em 0
-  const year = today.getFullYear();
 
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const year = today.getFullYear();
   const formattedDate = `${day}/${month}/${year}`;
 
   return (
@@ -100,7 +124,6 @@ function App() {
           <Clock className="w-5 h-5" />
           <span>
             ATTENTION ! Cette présentation sera disponible seulement jusqu’ au:{" "}
-            {""}
             {formattedDate}
           </span>
         </div>
@@ -109,8 +132,6 @@ function App() {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Video Section */}
-
           <div className="aspect-video rounded-xl overflow-hidden mb-4">
             <iframe
               width="100%"
@@ -146,40 +167,38 @@ function App() {
       )}
 
       {/* Unlocked Content */}
-
-      
       {isUnlocked && (
         <>
-        <section className="bg-[rgb(240,253,244)] py-6">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl leading-tight md:text-3xl font-extrabold text-gray-900">
-            Choisissez votre forfait SlimVita avec notre remise spéciale à durée
-            limitée !
-          </h2>
+          <section className="bg-[rgb(240,253,244)] py-6">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-xl leading-tight md:text-3xl font-extrabold text-gray-900">
+                Choisissez votre forfait SlimVita avec notre remise spéciale à
+                durée limitée !
+              </h2>
 
-          <p className="mt-3 text-base md:text-lg font-semibold text-gray-800 flex justify-center items-center gap-2">
-            <span
-              className={`text-lg md:text-xl inline-block transition-transform duration-700 ${
-                flipped ? "rotate-180" : "rotate-0"
-              }`}
-            >
-              ⏳
-            </span>
-            Flacons SlimVita restantes:{" "}
-            <span
-              className={`font-extrabold text-green-700 transition-transform duration-500 ${
-                animate ? "scale-125 text-red-600" : ""
-              }`}
-            >
-              {flacons}
-            </span>
-          </p>
-        </div>
-      </section>
+              <p className="mt-3 text-base md:text-lg font-semibold text-gray-800 flex justify-center items-center gap-2">
+                <span
+                  className={`text-lg md:text-xl inline-block transition-transform duration-700 ${
+                    flipped ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  ⏳
+                </span>
+                Flacons SlimVita restantes:{" "}
+                <span
+                  className={`font-extrabold text-green-700 transition-transform duration-500 ${
+                    animate ? "scale-125 text-red-600" : ""
+                  }`}
+                >
+                  {flacons}
+                </span>
+              </p>
+            </div>
+          </section>
+
           <section className="bg-white py-12 px-4 md:px-8">
             <Freight />
             <Product />
-            {/* Título */}
             <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
               Voyez ce que{" "}
               <span className="text-green-700">
@@ -188,13 +207,13 @@ function App() {
               , qui ont déjà transformé leur vie, disent sur{" "}
               <span className="text-green-700">SlimVita</span> :
             </h2>
-
             <Testimonies />
             <BeforeAfter />
           </section>
 
           <Ingredients />
           <Bonus />
+
           <section className="bg-white py-12 px-4 md:px-8">
             <Freight />
             <Product />
@@ -202,6 +221,7 @@ function App() {
             <Famous />
             <Freight />
           </section>
+
           <Product />
           <Faq />
           <Footer />
@@ -213,4 +233,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
